@@ -656,8 +656,8 @@ function App() {
             Meta: {goal} kcal
           </button>
           <div style={{fontSize:15,fontWeight:700}}>Mi registro</div>
-          <button onClick={()=>setModal("feedback")} style={{background:"rgba(255,255,255,.2)",border:"none",borderRadius:99,padding:"4px 10px",color:"#fff",fontSize:11,cursor:"pointer"}}>
-            💬
+          <button onClick={()=>setModal("feedback")} style={{background:"rgba(255,255,255,.2)",border:"none",borderRadius:99,padding:"4px 12px",color:"#fff",fontSize:12,cursor:"pointer",fontWeight:600}}>
+            💬 Feedback
           </button>
         </div>
         <div style={{display:"flex",gap:4,overflowX:"auto"}}>
@@ -1184,16 +1184,63 @@ function App() {
         </div>
       )}
 
-      {/* ══════ MODAL FEEDBACK ══════ */}
+      {/* ══════ MODAL FEEDBACK PROFESIONAL ══════ */}
       {modal==="feedback" && (
         <div onClick={()=>setModal(null)} style={{position:"fixed",inset:0,background:"rgba(0,0,0,.45)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:1000,padding:20}}>
-          <div onClick={e=>e.stopPropagation()} style={{background:"#fff",borderRadius:16,padding:20,width:"100%",maxWidth:380}}>
-            <div style={{fontSize:15,fontWeight:700,marginBottom:12}}>Feedback</div>
+          <div onClick={e=>e.stopPropagation()} style={{background:"#fff",borderRadius:16,padding:20,width:"100%",maxWidth:500,maxHeight:"90vh",overflowY:"auto"}}>
+            <div style={{fontSize:16,fontWeight:700,marginBottom:4}}>Feedback y Soporte</div>
+            <div style={{fontSize:12,color:"#888",marginBottom:16}}>Tu opinión es importante. Completa el formulario para ayudarnos a mejorar.</div>
+
             <form action="https://formspree.io/f/xpqnywvp" method="POST" style={{display:"flex",flexDirection:"column",gap:12}}>
-              <input type="email" name="email" placeholder="tu@email.com" required style={{padding:10,borderRadius:8,border:"1px solid #e0e0e0"}}/>
-              <textarea name="mensaje" placeholder="Tu comentario..." required style={{padding:10,borderRadius:8,border:"1px solid #e0e0e0",minHeight:100,fontFamily:"inherit",resize:"vertical"}}/>
-              <input type="hidden" name="_subject" value="Feedback NUTRIPEAK v2.1"/>
-              <button type="submit" style={{padding:12,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:700,cursor:"pointer"}}>Enviar</button>
+              
+              {/* Datos básicos */}
+              <div>
+                <label style={{fontSize:12,fontWeight:600,color:"#666",marginBottom:4,display:"block"}}>Nombre Completo *</label>
+                <input type="text" name="nombre" placeholder="Tu nombre" required style={{width:"100%",padding:10,borderRadius:8,border:"1px solid #e0e0e0",fontSize:13}}/>
+              </div>
+
+              <div>
+                <label style={{fontSize:12,fontWeight:600,color:"#666",marginBottom:4,display:"block"}}>Email *</label>
+                <input type="email" name="email" placeholder="tu@email.com" required style={{width:"100%",padding:10,borderRadius:8,border:"1px solid #e0e0e0",fontSize:13}}/>
+              </div>
+
+              {/* Contacto adicional */}
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+                <div>
+                  <label style={{fontSize:12,fontWeight:600,color:"#666",marginBottom:4,display:"block"}}>Teléfono</label>
+                  <input type="tel" name="telefono" placeholder="+56912345678" style={{width:"100%",padding:10,borderRadius:8,border:"1px solid #e0e0e0",fontSize:13}}/>
+                </div>
+                <div>
+                  <label style={{fontSize:12,fontWeight:600,color:"#666",marginBottom:4,display:"block"}}>País</label>
+                  <input type="text" name="pais" placeholder="Chile" style={{width:"100%",padding:10,borderRadius:8,border:"1px solid #e0e0e0",fontSize:13}}/>
+                </div>
+              </div>
+
+              {/* Redes sociales */}
+              <div>
+                <label style={{fontSize:12,fontWeight:600,color:"#666",marginBottom:8,display:"block"}}>Redes Sociales (Opcional)</label>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
+                  <input type="text" name="instagram" placeholder="Instagram" style={{width:"100%",padding:9,borderRadius:8,border:"1px solid #e0e0e0",fontSize:12}}/>
+                  <input type="text" name="tiktok" placeholder="TikTok" style={{width:"100%",padding:9,borderRadius:8,border:"1px solid #e0e0e0",fontSize:12}}/>
+                  <input type="text" name="twitter" placeholder="Twitter/X" style={{width:"100%",padding:9,borderRadius:8,border:"1px solid #e0e0e0",fontSize:12}}/>
+                  <input type="text" name="linkedin" placeholder="LinkedIn" style={{width:"100%",padding:9,borderRadius:8,border:"1px solid #e0e0e0",fontSize:12}}/>
+                </div>
+              </div>
+
+              {/* Mensaje */}
+              <div>
+                <label style={{fontSize:12,fontWeight:600,color:"#666",marginBottom:4,display:"block"}}>Tu Mensaje *</label>
+                <textarea name="mensaje" placeholder="Cuéntanos qué te gustaría mejorar, reporta errores, o comparte sugerencias..." required style={{width:"100%",minHeight:120,padding:10,borderRadius:8,border:"1px solid #e0e0e0",fontSize:13,fontFamily:"inherit",resize:"vertical"}}/>
+              </div>
+
+              <input type="hidden" name="_subject" value="Nuevo feedback de NUTRIPEAK v2.1"/>
+              <input type="hidden" name="_captcha" value="false"/>
+              
+              {/* Botones */}
+              <div style={{display:"flex",gap:8,marginTop:8}}>
+                <button type="submit" style={{flex:1,padding:12,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:700,fontSize:13,cursor:"pointer"}}>✓ Enviar Feedback</button>
+                <button type="button" onClick={()=>setModal(null)} style={{flex:1,padding:12,background:"#f5f5f5",color:"#555",border:"none",borderRadius:10,fontSize:13,cursor:"pointer"}}>Cancelar</button>
+              </div>
             </form>
           </div>
         </div>
