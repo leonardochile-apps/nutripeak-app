@@ -91,4 +91,737 @@ const WORKOUT_ROUTINES = {
           { name: "Sentadillas", sets: 4, reps: "6-8", rest: 90, calories: 35 },
           { name: "Press de Banca", sets: 4, reps: "6-8", rest: 90, calories: 30 },
           { name: "Peso Muerto", sets: 3, reps: "5-6", rest: 120, calories: 40 },
-          { name: "Remo con
+          { name: "Remo con Barra", sets: 4, reps: "6-8", rest: 90, calories: 28 }
+        ]
+      },
+      {
+        day: "Miércoles - Full Body B",
+        exercises: [
+          { name: "Sentadilla Búlgara", sets: 3, reps: "8-10", rest: 60, calories: 25 },
+          { name: "Press Inclinado", sets: 4, reps: "6-8", rest: 90, calories: 28 },
+          { name: "Sentadilla Frontal", sets: 3, reps: "6-8", rest: 90, calories: 32 },
+          { name: "Jalón Lat", sets: 3, reps: "8-10", rest: 60, calories: 22 }
+        ]
+      },
+      {
+        day: "Viernes - Full Body C",
+        exercises: [
+          { name: "Prensa de Pierna", sets: 4, reps: "8-10", rest: 75, calories: 28 },
+          { name: "Dips (paralelas)", sets: 4, reps: "6-10", rest: 90, calories: 25 },
+          { name: "Remo Pendlay", sets: 4, reps: "6-8", rest: 90, calories: 32 },
+          { name: "Elevaciones Laterales", sets: 3, reps: "10-12", rest: 45, calories: 15 }
+        ]
+      }
+    ]
+  },
+  "upperlower": {
+    name: "Upper/Lower - 4 días/semana",
+    description: "Más volumen muscular. Ideal cuando tienes experiencia.",
+    days: [
+      {
+        day: "Lunes - Lower A",
+        exercises: [
+          { name: "Sentadillas", sets: 4, reps: "6-8", rest: 90, calories: 35 },
+          { name: "Leg Press", sets: 4, reps: "8-10", rest: 75, calories: 28 },
+          { name: "Curl de Isquios", sets: 3, reps: "8-10", rest: 60, calories: 18 },
+          { name: "Extensiones de Cuádriceps", sets: 3, reps: "10-12", rest: 45, calories: 15 }
+        ]
+      },
+      {
+        day: "Martes - Upper A",
+        exercises: [
+          { name: "Press de Banca", sets: 4, reps: "6-8", rest: 90, calories: 30 },
+          { name: "Remo con Barra", sets: 4, reps: "6-8", rest: 90, calories: 28 },
+          { name: "Press de Hombros", sets: 3, reps: "8-10", rest: 75, calories: 24 },
+          { name: "Flexiones de Bíceps", sets: 3, reps: "8-10", rest: 60, calories: 16 }
+        ]
+      },
+      {
+        day: "Jueves - Lower B",
+        exercises: [
+          { name: "Peso Muerto", sets: 3, reps: "5-6", rest: 120, calories: 40 },
+          { name: "Sentadilla Frontal", sets: 3, reps: "6-8", rest: 90, calories: 32 },
+          { name: "Leg Press", sets: 3, reps: "10-12", rest: 60, calories: 22 },
+          { name: "Elevación de Talones", sets: 3, reps: "12-15", rest: 45, calories: 12 }
+        ]
+      },
+      {
+        day: "Viernes - Upper B",
+        exercises: [
+          { name: "Inclinado Mancuernas", sets: 4, reps: "8-10", rest: 75, calories: 28 },
+          { name: "Remo Pendlay", sets: 4, reps: "6-8", rest: 90, calories: 32 },
+          { name: "Lateral Raises", sets: 3, reps: "10-12", rest: 45, calories: 15 },
+          { name: "Dips (paralelas)", sets: 3, reps: "8-10", rest: 75, calories: 22 }
+        ]
+      }
+    ]
+  },
+  "ppl": {
+    name: "Push/Pull/Legs - 3 días/semana",
+    description: "Equilibrio perfecto. Ideal para la mayoría.",
+    days: [
+      {
+        day: "Lunes - Push",
+        exercises: [
+          { name: "Press de Banca", sets: 4, reps: "6-8", rest: 90, calories: 30 },
+          { name: "Press Inclinado", sets: 3, reps: "8-10", rest: 75, calories: 26 },
+          { name: "Press de Hombros", sets: 3, reps: "8-10", rest: 75, calories: 24 },
+          { name: "Extensiones de Tríceps", sets: 3, reps: "10-12", rest: 60, calories: 16 }
+        ]
+      },
+      {
+        day: "Martes - Pull",
+        exercises: [
+          { name: "Remo con Barra", sets: 4, reps: "6-8", rest: 90, calories: 28 },
+          { name: "Jalón Lat", sets: 3, reps: "8-10", rest: 75, calories: 22 },
+          { name: "Flexiones de Bíceps", sets: 3, reps: "8-10", rest: 60, calories: 16 },
+          { name: "Remo con Mancuerna", sets: 3, reps: "10-12", rest: 60, calories: 20 }
+        ]
+      },
+      {
+        day: "Jueves - Legs",
+        exercises: [
+          { name: "Sentadillas", sets: 4, reps: "6-8", rest: 90, calories: 35 },
+          { name: "Peso Muerto Rumano", sets: 3, reps: "8-10", rest: 75, calories: 32 },
+          { name: "Leg Press", sets: 3, reps: "8-10", rest: 75, calories: 28 },
+          { name: "Curl de Isquios", sets: 3, reps: "10-12", rest: 60, calories: 18 }
+        ]
+      }
+    ]
+  }
+};
+
+function App() {
+  const [tab, setTab] = useState("hoy");
+  const [date, setDate] = useState(t0());
+  const [goal, setGoal] = useState(2000);
+  const [log, setLog] = useState(() => JSON.parse(localStorage.getItem("cal_log") || "{}"));
+  const [customDB, setCustomDB] = useState(() => JSON.parse(localStorage.getItem("cal_custom") || "[]"));
+  const [dayWater, setDayWater] = useState(0);
+  const [waterGoal, setWaterGoal] = useState(9);
+  const [weight, setWeightState] = useState(() => JSON.parse(localStorage.getItem("user_weight") || "75"));
+  const [height, setHeightState] = useState(() => JSON.parse(localStorage.getItem("user_height") || "175"));
+  const [age, setAgeState] = useState(() => JSON.parse(localStorage.getItem("user_age") || "30"));
+  const [sex, setSexState] = useState(() => localStorage.getItem("user_sex") || "M");
+  const [activityLevel, setActivityLevelState] = useState(() => JSON.parse(localStorage.getItem("user_activity") || "1.55"));
+  const [objective, setObjectiveState] = useState(() => localStorage.getItem("user_objective") || "muscleGain");
+  const [selectedRoutine, setSelectedRoutine] = useState(() => localStorage.getItem("selected_routine") || "fullbody");
+  const [completedWorkouts, setCompletedWorkouts] = useState(() => JSON.parse(localStorage.getItem("workouts") || "{}"));
+  
+  const [modal, setModal] = useState(null);
+  const [query, setQuery] = useState("");
+  const [selFood, setSelFood] = useState(null);
+  const [amount, setAmount] = useState(100);
+  const [meal, setMeal] = useState("Desayuno");
+  const [detEntry, setDetEntry] = useState(null);
+  const [editWaterGoal, setEditWaterGoal] = useState(false);
+  const [newWaterGoal, setNewWaterGoal] = useState(waterGoal);
+  const searchRef = useRef(null);
+
+  useEffect(() => { localStorage.setItem("user_weight", weight); }, [weight]);
+  useEffect(() => { localStorage.setItem("user_height", height); }, [height]);
+  useEffect(() => { localStorage.setItem("user_age", age); }, [age]);
+  useEffect(() => { localStorage.setItem("user_sex", sex); }, [sex]);
+  useEffect(() => { localStorage.setItem("user_activity", activityLevel); }, [activityLevel]);
+  useEffect(() => { localStorage.setItem("user_objective", objective); }, [objective]);
+  useEffect(() => { localStorage.setItem("selected_routine", selectedRoutine); }, [selectedRoutine]);
+
+  const calculateMetrics = () => {
+    let tmb;
+    if(sex === "M") {
+      tmb = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+      tmb = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+    
+    const tdee = tmb * activityLevel;
+    let dailyGoal;
+    
+    switch(objective) {
+      case "weightLoss":
+        dailyGoal = Math.round(tdee - 450);
+        break;
+      case "muscleGain":
+        dailyGoal = Math.round(tdee + 350);
+        break;
+      default:
+        dailyGoal = Math.round(tdee);
+    }
+    
+    let proteinG, carbsPercent, fatsPercent;
+    if(objective === "muscleGain") {
+      proteinG = Math.round(weight * 2.0);
+      fatsPercent = 0.25;
+      carbsPercent = 1 - (proteinG * 4 / dailyGoal) - fatsPercent;
+    } else if(objective === "weightLoss") {
+      proteinG = Math.round(weight * 1.8);
+      fatsPercent = 0.25;
+      carbsPercent = 1 - (proteinG * 4 / dailyGoal) - fatsPercent;
+    } else {
+      proteinG = Math.round(weight * 1.6);
+      carbsPercent = 0.55;
+      fatsPercent = 0.30;
+    }
+
+    return {
+      tmb: Math.round(tmb),
+      tdee: Math.round(tdee),
+      dailyGoal,
+      protein: proteinG,
+      carbs: Math.round(dailyGoal * carbsPercent / 4),
+      fats: Math.round(dailyGoal * fatsPercent / 9),
+      water: Math.round((weight / 2) * 0.03)
+    };
+  };
+
+  const metrics = useMemo(calculateMetrics, [weight, height, age, sex, activityLevel, objective]);
+
+  useEffect(() => {
+    setGoal(metrics.dailyGoal);
+    setWaterGoal(metrics.water);
+    setNewWaterGoal(metrics.water);
+  }, [metrics]);
+
+  const saveLog = l => { setLog(l); localStorage.setItem("cal_log", JSON.stringify(l)); };
+  const saveCustom = c => { setCustomDB(c); localStorage.setItem("cal_custom", JSON.stringify(c)); };
+  const saveWorkouts = w => { setCompletedWorkouts(w); localStorage.setItem("workouts", JSON.stringify(w)); };
+
+  const dateKey = dk(date);
+  const dayData = log[dateKey] || { entries: [], water: 0, weight: null };
+  const entries = dayData.entries || [];
+  const dayWeight = dayData.weight || "";
+
+  const updateDay = (patch) => {
+    const updated = { ...log, [dateKey]: { ...dayData, ...patch } };
+    saveLog(updated);
+  };
+
+  const totals = useMemo(() => entries.reduce((a, e) => ({
+    cal: a.cal + e.cal, pro: a.pro + e.pro, car: a.car + e.car, fat: a.fat + e.fat
+  }), { cal: 0, pro: 0, car: 0, fat: 0 }), [entries]);
+
+  const DB_BASE = [
+    { id:1,  n:"Pechuga de pollo (cocida)", cal:165, pro:31, car:0, fat:3.6, u:"g", cat:"🥩 Proteínas" },
+    { id:2,  n:"Muslo de pollo (cocido)", cal:209, pro:26, car:0, fat:11, u:"g", cat:"🥩 Proteínas" },
+    { id:3,  n:"Carne molida (magra)", cal:215, pro:26, car:0, fat:12, u:"g", cat:"🥩 Proteínas" },
+    { id:4,  n:"Filete de vacuno", cal:250, pro:28, car:0, fat:15, u:"g", cat:"🥩 Proteínas" },
+    { id:5,  n:"Atún en agua", cal:116, pro:26, car:0, fat:1, u:"g", cat:"🥩 Proteínas" },
+    { id:6,  n:"Salmón", cal:208, pro:20, car:0, fat:13, u:"g", cat:"🥩 Proteínas" },
+    { id:8,  n:"Huevo entero", cal:70, pro:6, car:0.4, fat:5, u:"un", cat:"🥩 Proteínas", base:50 },
+    { id:20, n:"Leche entera", cal:61, pro:3.2, car:4.8, fat:3.3, u:"ml", cat:"🥛 Lácteos" },
+    { id:21, n:"Leche descremada", cal:34, pro:3.4, car:5, fat:0.1, u:"ml", cat:"🥛 Lácteos" },
+    { id:22, n:"Yogur natural", cal:59, pro:3.5, car:4, fat:3.3, u:"g", cat:"🥛 Lácteos" },
+    { id:24, n:"Queso fresco", cal:172, pro:12, car:1.4, fat:13, u:"g", cat:"🥛 Lácteos" },
+    { id:30, n:"Arroz blanco", cal:130, pro:2.7, car:28, fat:0.3, u:"g", cat:"🌾 Cereales" },
+    { id:31, n:"Arroz integral", cal:111, pro:2.6, car:23, fat:0.9, u:"g", cat:"🌾 Cereales" },
+    { id:32, n:"Pan marraqueta", cal:164, pro:5.5, car:32, fat:1.5, u:"un", cat:"🌾 Cereales", base:65 },
+    { id:34, n:"Pasta cocida", cal:131, pro:5, car:25, fat:1.1, u:"g", cat:"🌾 Cereales" },
+    { id:35, n:"Avena (cruda)", cal:389, pro:17, car:66, fat:7, u:"g", cat:"🌾 Cereales" },
+    { id:36, n:"Papa cocida", cal:87, pro:1.9, car:20, fat:0.1, u:"g", cat:"🌾 Cereales" },
+    { id:50, n:"Porotos cocidos", cal:127, pro:8.7, car:23, fat:0.5, u:"g", cat:"🫘 Legumbres" },
+    { id:51, n:"Lentejas cocidas", cal:116, pro:9, car:20, fat:0.4, u:"g", cat:"🫘 Legumbres" },
+    { id:60, n:"Lechuga", cal:15, pro:1.4, car:2.9, fat:0.2, u:"g", cat:"🥦 Verduras" },
+    { id:61, n:"Tomate", cal:18, pro:0.9, car:3.9, fat:0.2, u:"g", cat:"🥦 Verduras" },
+    { id:62, n:"Zanahoria", cal:41, pro:0.9, car:10, fat:0.2, u:"g", cat:"🥦 Verduras" },
+    { id:63, n:"Brócoli", cal:34, pro:2.8, car:7, fat:0.4, u:"g", cat:"🥦 Verduras" },
+    { id:80, n:"Manzana", cal:95, pro:0.5, car:25, fat:0.3, u:"un", cat:"🍎 Frutas", base:182 },
+    { id:81, n:"Plátano", cal:105, pro:1.3, car:27, fat:0.4, u:"un", cat:"🍎 Frutas", base:118 },
+    { id:100, n:"Almendras", cal:579, pro:21, car:22, fat:50, u:"g", cat:"🥜 Frutos secos" },
+    { id:130, n:"Agua", cal:0, pro:0, car:0, fat:0, u:"ml", cat:"🥤 Bebidas" },
+    { id:131, n:"Café negro", cal:5, pro:0.3, car:0.5, fat:0, u:"ml", cat:"🥤 Bebidas" },
+  ];
+
+  const DB = useMemo(() => [...DB_BASE, ...customDB], [customDB]);
+  const filtered = useMemo(() => {
+    if(!query.trim()) return [];
+    const q = query.toLowerCase();
+    return DB.filter(f => f.n.toLowerCase().includes(q)).slice(0, 14);
+  }, [query, DB]);
+
+  const selectFood = f => { setSelFood(f); setAmount(f.base || 100); setQuery(f.n); };
+
+  const calcEntry = (food, amt) => {
+    const base = food.base || 100, factor = amt / base;
+    return {
+      id: Date.now().toString(), foodId: food.id, name: food.n, meal, amount: amt, unit: food.u,
+      cal: Math.round(food.cal * factor), pro: rnd(food.pro * factor),
+      car: rnd(food.car * factor), fat: rnd(food.fat * factor)
+    };
+  };
+
+  const addEntry = () => {
+    if(!selFood) return;
+    updateDay({ entries: [...entries, calcEntry(selFood, amount)] });
+    setModal(null);
+    setQuery("");
+    setSelFood(null);
+    setAmount(100);
+  };
+
+  const removeEntry = id => {
+    updateDay({ entries: entries.filter(e => e.id !== id) });
+    setDetEntry(null);
+    setModal(null);
+  };
+
+  const pct = totals.cal / goal;
+  const rem = goal - Math.round(totals.cal);
+
+  const openAdd = m => {
+    setMeal(m || "Desayuno");
+    setModal("add");
+    setTimeout(() => searchRef.current?.focus(), 120);
+  };
+
+  const weightHistory = useMemo(() => Array.from({length: 14}, (_, i) => {
+    const d = ad(t0(), -13 + i), k = dk(d);
+    return (log[k]?.weight) ? Number(log[k].weight) : null;
+  }), [log]);
+
+  const toggleWorkoutComplete = (dayName) => {
+    const key = `${dateKey}-${dayName}`;
+    const updated = {...completedWorkouts};
+    updated[key] = !updated[key];
+    saveWorkouts(updated);
+  };
+
+  return (
+    <div style={{ minHeight: "100vh", background: "#E8F1ED" }}>
+
+      {/* TOPBAR */}
+      <div style={{ background: GREEN, color: "#fff", padding: "12px 16px 0" }}>
+        <div style={{ fontSize: 10, opacity: .7, letterSpacing: ".1em", textTransform: "uppercase" }}>NUTRIPEAK v2.0</div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 2, marginBottom: 10, gap: 8 }}>
+          <button onClick={() => setModal("goal")} style={{ background: "rgba(255,255,255,.2)", border: "none", borderRadius: 99, padding: "4px 12px", color: "#fff", fontSize: 12 }}>
+            Meta: {goal} kcal
+          </button>
+          <div style={{ fontSize: 15, fontWeight: 700 }}>Mi registro diario</div>
+          <button onClick={() => setModal("info")} style={{ background: "rgba(255,255,255,.2)", border: "none", borderRadius: 99, padding: "4px 10px", color: "#fff", fontSize: 12, cursor: "pointer" }}>
+            ℹ️ Info
+          </button>
+        </div>
+        <div style={{ display: "flex", gap: 4 }}>
+          {[["hoy", "Hoy"], ["historial", "Historial"], ["ejercicios", "💪 Ejercicios"], ["mis", "Mis alimentos"]].map(([k, l]) => (
+            <button key={k} onClick={() => setTab(k)} style={{
+              background: tab === k ? "rgba(255,255,255,.25)" : "transparent",
+              border: "none", borderRadius: "8px 8px 0 0", padding: "6px 14px",
+              color: "#fff", fontSize: 12, fontWeight: tab === k ? 700 : 400
+            }}>{l}</button>
+          ))}
+        </div>
+      </div>
+
+      {/* TAB HOY */}
+      {tab === "hoy" && (
+        <div style={{ padding: 14 }}>
+
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+            <button onClick={() => setDate(d => ad(d, -1))} style={{ background: "#fff", border: "1px solid #ddd", borderRadius: 8, padding: "6px 12px", fontSize: 14 }}>‹</button>
+            <div style={{ textAlign: "center" }}>
+              <div style={{ fontSize: 14, fontWeight: 600 }}>{fmt(date)}</div>
+              {dk(date) === dk(t0()) && <div style={{ fontSize: 11, color: GREEN, fontWeight: 600 }}>Hoy</div>}
+            </div>
+            <button onClick={() => setDate(d => ad(d, 1))} disabled={dk(date) === dk(t0())} style={{ background: "#fff", border: "1px solid #ddd", borderRadius: 8, padding: "6px 12px", fontSize: 14, opacity: dk(date) === dk(t0()) ? .3 : 1 }}>›</button>
+          </div>
+
+          {/* Resumen calorías */}
+          <div style={{ background: "#fff", borderRadius: 16, padding: 16, marginBottom: 12, display: "flex", alignItems: "center", gap: 14, boxShadow: "0 1px 8px rgba(0,0,0,.07)" }}>
+            <Ring pct={pct} label={Math.round(totals.cal)} sub="kcal" />
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 12, color: "#555", marginBottom: 8 }}>
+                {rem >= 0
+                  ? <><span style={{ fontWeight: 700, color: GREEN }}>{rem}</span> kcal restantes</>
+                  : <><span style={{ fontWeight: 700, color: "#EF4444" }}>{Math.abs(rem)}</span> kcal sobre meta</>}
+              </div>
+              <MacroBar label="Proteína" val={totals.pro} max={metrics.protein} color="#3B82F6" />
+              <MacroBar label="Carbohidratos" val={totals.car} max={metrics.carbs} color="#F97316" />
+              <MacroBar label="Grasas" val={totals.fat} max={metrics.fats} color="#8B5CF6" />
+            </div>
+          </div>
+
+          {/* Agua + Peso */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
+
+            {/* AGUA */}
+            <div style={{ background: "#fff", borderRadius: 14, padding: 14, boxShadow: "0 1px 6px rgba(0,0,0,.06)" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+                <div>
+                  <div style={{ fontSize: 11, color: "#888" }}>Agua</div>
+                  <div style={{ fontSize: 17, fontWeight: 700, color: BLUE }}>{dayWater}<span style={{ fontSize: 11, fontWeight: 400, color: "#aaa" }}>/{waterGoal}</span></div>
+                  <div style={{ fontSize: 10, color: "#aaa" }}>{dayWater * 250} ml</div>
+                </div>
+                <div style={{ fontSize: 28 }}>💧</div>
+              </div>
+              
+              {!editWaterGoal ? (
+                <button onClick={() => setEditWaterGoal(true)} style={{ width: "100%", fontSize: 11, color: "#666", background: "transparent", border: "1px dashed #ddd", padding: 6, borderRadius: 6, cursor: "pointer", marginBottom: 8 }}>
+                  Editar meta ({waterGoal})
+                </button>
+              ) : (
+                <div style={{ marginBottom: 8 }}>
+                  <input type="number" value={newWaterGoal} onChange={e => setNewWaterGoal(Number(e.target.value))} style={{ marginBottom: 6 }} />
+                  <div style={{ display: "flex", gap: 6 }}>
+                    <button onClick={() => { setWaterGoal(newWaterGoal); setEditWaterGoal(false); }} style={{ flex: 1, padding: "4px 0", background: GREEN, color: "#fff", border: "none", borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: "pointer" }}>✓</button>
+                    <button onClick={() => setEditWaterGoal(false)} style={{ flex: 1, padding: "4px 0", background: "#f5f5f5", color: "#555", border: "none", borderRadius: 6, fontSize: 11, cursor: "pointer" }}>✕</button>
+                  </div>
+                </div>
+              )}
+              
+              <div style={{ display: "flex", gap: 4 }}>
+                <button onClick={() => setDayWater(Math.max(0, dayWater - 1))} style={{ flex: 1, padding: "5px 0", background: "#f5f5f5", border: "none", borderRadius: 7, fontSize: 16, color: BLUE }}>−</button>
+                <button onClick={() => setDayWater(Math.min(waterGoal + 2, dayWater + 1))} style={{ flex: 1, padding: "5px 0", background: LBLUE, border: "none", borderRadius: 7, fontSize: 16, color: BLUE }}>+</button>
+              </div>
+            </div>
+
+            {/* PESO */}
+            <div style={{ background: "#fff", borderRadius: 14, padding: 14, boxShadow: "0 1px 6px rgba(0,0,0,.06)" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+                <div>
+                  <div style={{ fontSize: 11, color: "#888" }}>Peso corporal</div>
+                  <div style={{ fontSize: 17, fontWeight: 700, color: GREEN }}>
+                    {dayWeight || "—"}<span style={{ fontSize: 11, fontWeight: 400, color: "#aaa" }}> kg</span>
+                  </div>
+                </div>
+                <div style={{ fontSize: 28 }}>⚖️</div>
+              </div>
+              <input type="number" value={dayWeight} step="0.1" min="30" max="300"
+                placeholder="ej: 78.5"
+                onChange={e => updateDay({ weight: e.target.value })}
+                style={{ marginBottom: 8, textAlign: "center", fontWeight: 700, fontSize: 15, color: GREEN }} />
+              <div style={{ overflow: "hidden" }}>
+                <WeightChart data={weightHistory} />
+                <div style={{ fontSize: 9, color: "#ccc", marginTop: 2 }}>Últimas 2 semanas</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Registro por comida */}
+          {MEALS.map(m => {
+            const mE = entries.filter(e => e.meal === m);
+            const mC = mE.reduce((s, e) => s + e.cal, 0);
+            return (
+              <div key={m} style={{ background: "#fff", borderRadius: 14, marginBottom: 10, overflow: "hidden", boxShadow: "0 1px 6px rgba(0,0,0,.06)" }}>
+                <div style={{ padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: mE.length ? "1px solid #f5f5f5" : "none" }}>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 600 }}>{m}</div>
+                    {mC > 0 && <div style={{ fontSize: 11, color: "#999" }}>{Math.round(mC)} kcal</div>}
+                  </div>
+                  <button onClick={() => openAdd(m)} style={{ background: LGREEN, border: "none", borderRadius: 8, padding: "5px 12px", color: GREEN, fontSize: 13, fontWeight: 600 }}>+ Agregar</button>
+                </div>
+                {mE.map(e => (
+                  <div key={e.id} onClick={() => { setDetEntry(e); setModal("detail"); }}
+                    style={{ padding: "8px 14px", borderBottom: "1px solid #fafafa", display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: 13 }}>{e.name}</div>
+                      <div style={{ fontSize: 11, color: "#bbb" }}>{e.amount}{["g", "ml"].includes(e.unit) ? e.unit : ""} · P:{e.pro}g C:{e.car}g G:{e.fat}g</div>
+                    </div>
+                    <div style={{ fontWeight: 700, color: GREEN, fontSize: 14 }}>{e.cal}</div>
+                    <div style={{ fontSize: 11, color: "#ccc" }}>kcal</div>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* TAB EJERCICIOS */}
+      {tab === "ejercicios" && (
+        <div style={{ padding: 14 }}>
+          <div style={{ background: "#fff", borderRadius: 14, padding: 14, marginBottom: 14, boxShadow: "0 1px 6px rgba(0,0,0,.06)" }}>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>Selecciona tu rutina</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 8 }}>
+              {Object.entries(WORKOUT_ROUTINES).map(([key, routine]) => (
+                <button key={key} onClick={() => setSelectedRoutine(key)} style={{
+                  padding: 12, borderRadius: 10, border: "2px solid " + (selectedRoutine === key ? GREEN : "#ddd"),
+                  background: selectedRoutine === key ? LGREEN : "#f9f9f9",
+                  textAlign: "left", cursor: "pointer", transition: "all .2s"
+                }}>
+                  <div style={{ fontWeight: 700, color: GREEN }}>{routine.name}</div>
+                  <div style={{ fontSize: 12, color: "#666", marginTop: 4 }}>{routine.description}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Mostrar rutina seleccionada */}
+          {WORKOUT_ROUTINES[selectedRoutine].days.map((day, idx) => {
+            const dayKey = `${dateKey}-${day.day}`;
+            const isCompleted = completedWorkouts[dayKey];
+            const totalCalories = day.exercises.reduce((s, e) => s + e.calories, 0);
+            
+            return (
+              <div key={idx} style={{ background: "#fff", borderRadius: 14, marginBottom: 12, overflow: "hidden", boxShadow: "0 1px 6px rgba(0,0,0,.06)" }}>
+                <div style={{ padding: "12px 14px", background: isCompleted ? LGREEN : "#f9f9f9", borderBottom: "1px solid #f0f0f0", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div>
+                    <div style={{ fontWeight: 700, color: GREEN, marginBottom: 2 }}>{day.day}</div>
+                    <div style={{ fontSize: 11, color: "#666" }}>~{totalCalories} kcal</div>
+                  </div>
+                  <button onClick={() => toggleWorkoutComplete(day.day)} style={{
+                    padding: "6px 14px", borderRadius: 6, border: "none", background: isCompleted ? GREEN : "#ddd",
+                    color: isCompleted ? "#fff" : "#666", fontWeight: 600, cursor: "pointer", fontSize: 12
+                  }}>
+                    {isCompleted ? "✓ Completado" : "Marcar"}
+                  </button>
+                </div>
+                
+                <div style={{ padding: 0 }}>
+                  {day.exercises.map((ex, i) => (
+                    <div key={i} style={{ padding: "12px 14px", borderBottom: i < day.exercises.length - 1 ? "1px solid #f5f5f5" : "none" }}>
+                      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4 }}>{ex.name}</div>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, fontSize: 11 }}>
+                        <div>
+                          <div style={{ color: "#999", marginBottom: 2 }}>Series</div>
+                          <div style={{ fontWeight: 700, color: GREEN }}>{ex.sets}</div>
+                        </div>
+                        <div>
+                          <div style={{ color: "#999", marginBottom: 2 }}>Reps</div>
+                          <div style={{ fontWeight: 700, color: GREEN }}>{ex.reps}</div>
+                        </div>
+                        <div>
+                          <div style={{ color: "#999", marginBottom: 2 }}>Descanso</div>
+                          <div style={{ fontWeight: 700, color: GREEN }}>{ex.rest}s</div>
+                        </div>
+                        <div>
+                          <div style={{ color: "#999", marginBottom: 2 }}>Kcal</div>
+                          <div style={{ fontWeight: 700, color: GREEN }}>{ex.calories}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* TAB HISTORIAL */}
+      {tab === "historial" && (
+        <div style={{ padding: 14 }}>
+          <div style={{ background: "#fff", borderRadius: 16, padding: 16, marginBottom: 12, boxShadow: "0 1px 8px rgba(0,0,0,.07)" }}>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 12 }}>Calorías — últimos 7 días</div>
+            {Array.from({length: 7}, (_, i) => {
+              const d = ad(t0(), -6 + i), k = dk(d);
+              const ents = log[k]?.entries || [];
+              const cal = ents.reduce((s, e) => s + e.cal, 0);
+              return (
+                <div key={k} onClick={() => { setDate(d); setTab("hoy"); }}
+                  style={{ display: "flex", alignItems: "center", gap: 12, padding: "9px 0", borderBottom: "1px solid #f8f8f8", cursor: "pointer" }}>
+                  <div style={{ width: 44, fontSize: 12 }}>
+                    <div style={{ fontWeight: dk(d) === dk(t0()) ? 700 : 400, color: dk(d) === dk(t0()) ? GREEN : "#333" }}>{DAYS[d.getDay()]}</div>
+                    <div style={{ fontSize: 10, color: "#bbb" }}>{d.getDate()}/{d.getMonth() + 1}</div>
+                  </div>
+                  <div style={{ flex: 1, height: 8, background: "#eee", borderRadius: 99, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${Math.min(cal / goal, 1) * 100}%`, background: cal > goal ? "#EF4444" : GREEN, borderRadius: 99 }} />
+                  </div>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: cal > goal ? "#EF4444" : "#333", minWidth: 72, textAlign: "right" }}>
+                    {cal > 0 ? `${Math.round(cal)} kcal` : <span style={{ color: "#ddd", fontWeight: 400 }}>—</span>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* MODAL: META NUTRICIONAL */}
+      {modal === "goal" && (
+        <div onClick={() => setModal(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 20 }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: 20, width: "100%", maxWidth: 380, maxHeight: "90vh", overflowY: "auto" }}>
+            <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: GREEN }}>Tu Perfil Nutricional v2.0</div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
+              <div>
+                <label style={{ fontSize: 11, fontWeight: 600, color: "#666", display: "block", marginBottom: 4 }}>Peso (kg)</label>
+                <input type="number" value={weight} onChange={e => setWeightState(Number(e.target.value))} />
+              </div>
+              <div>
+                <label style={{ fontSize: 11, fontWeight: 600, color: "#666", display: "block", marginBottom: 4 }}>Altura (cm)</label>
+                <input type="number" value={height} onChange={e => setHeightState(Number(e.target.value))} />
+              </div>
+              <div>
+                <label style={{ fontSize: 11, fontWeight: 600, color: "#666", display: "block", marginBottom: 4 }}>Edad</label>
+                <input type="number" value={age} onChange={e => setAgeState(Number(e.target.value))} />
+              </div>
+              <div>
+                <label style={{ fontSize: 11, fontWeight: 600, color: "#666", display: "block", marginBottom: 4 }}>Sexo</label>
+                <select value={sex} onChange={e => setSexState(e.target.value)}>
+                  <option value="M">Masculino</option>
+                  <option value="F">Femenino</option>
+                </select>
+              </div>
+            </div>
+
+            <div style={{ marginBottom: 16 }}>
+              <label style={{ fontSize: 11, fontWeight: 600, color: "#666", display: "block", marginBottom: 6 }}>Nivel de Actividad</label>
+              <select value={activityLevel} onChange={e => setActivityLevelState(Number(e.target.value))} style={{ width: "100%" }}>
+                <option value={1.2}>Sedentario</option>
+                <option value={1.375}>Ligero</option>
+                <option value={1.55}>Moderado</option>
+                <option value={1.725}>Activo</option>
+                <option value={1.9}>Muy Activo</option>
+              </select>
+            </div>
+
+            <div style={{ marginBottom: 16 }}>
+              <label style={{ fontSize: 11, fontWeight: 600, color: "#666", display: "block", marginBottom: 6 }}>Objetivo</label>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
+                {["weightLoss", "maintenance", "muscleGain"].map(o => (
+                  <button key={o} onClick={() => setObjectiveState(o)} style={{
+                    padding: 10, borderRadius: 8,
+                    background: objective === o ? GREEN : "#f5f5f5",
+                    color: objective === o ? "#fff" : "#333",
+                    border: "none", fontWeight: 600, fontSize: 12, cursor: "pointer"
+                  }}>
+                    {o === "weightLoss" ? "📉 Pérdida" : o === "maintenance" ? "⚖️ Mant." : "💪 Ganancia"}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ background: "#f9f9f9", borderRadius: 10, padding: 12, marginBottom: 16, fontSize: 13, lineHeight: 1.6 }}>
+              <div style={{ fontWeight: 700, color: GREEN, marginBottom: 8 }}>📊 Métricas Calculadas</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div>
+                  <div style={{ fontSize: 11, color: "#666" }}>TMB</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: GREEN }}>{metrics.tmb}</div>
+                  <div style={{ fontSize: 10, color: "#aaa" }}>kcal/día</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 11, color: "#666" }}>TDEE</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: GREEN }}>{metrics.tdee}</div>
+                  <div style={{ fontSize: 10, color: "#aaa" }}>kcal/día</div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: "#f9f9f9", borderRadius: 10, padding: 12, marginBottom: 16, fontSize: 13, lineHeight: 1.6 }}>
+              <div style={{ fontWeight: 700, color: GREEN, marginBottom: 8 }}>🎯 Macronutrientes v2.0</div>
+              <div style={{ fontSize: 12, marginBottom: 8 }}>
+                <strong>Proteína:</strong> {metrics.protein}g ({Math.round(metrics.protein * 4 / metrics.dailyGoal * 100)}%)
+              </div>
+              <div style={{ fontSize: 12, marginBottom: 8 }}>
+                <strong>Carbohidratos:</strong> {metrics.carbs}g
+              </div>
+              <div style={{ fontSize: 12 }}>
+                <strong>Grasas:</strong> {metrics.fats}g
+              </div>
+            </div>
+
+            <div style={{ background: "#f0fdf4", borderRadius: 8, padding: 10, marginBottom: 16, fontSize: 12, color: GREEN, borderLeft: "3px solid " + GREEN }}>
+              ✅ Meta: {goal} kcal/día
+            </div>
+
+            <button onClick={() => setModal(null)} style={{ width: "100%", padding: 11, background: GREEN, color: "#fff", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Listo</button>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL: DETALLE ALIMENTO */}
+      {modal === "detail" && detEntry && (
+        <div onClick={() => setModal(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 20 }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: 20, width: "100%", maxWidth: 320 }}>
+            <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 12 }}>{detEntry.name}</div>
+            <div style={{ background: "#f5f5f5", borderRadius: 10, padding: 12, marginBottom: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div>
+                  <div style={{ fontSize: 10, color: "#666" }}>Cantidad</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: GREEN }}>{detEntry.amount}{["g", "ml"].includes(detEntry.unit) ? detEntry.unit : ""}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 10, color: "#666" }}>Calorías</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: GREEN }}>{detEntry.cal}</div>
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 16 }}>
+              <div style={{ background: "#dbeafe", borderRadius: 8, padding: 12, textAlign: "center" }}>
+                <div style={{ fontSize: 10, color: "#333" }}>Proteína</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "#3B82F6" }}>{detEntry.pro}g</div>
+              </div>
+              <div style={{ background: "#fed7aa", borderRadius: 8, padding: 12, textAlign: "center" }}>
+                <div style={{ fontSize: 10, color: "#333" }}>Carbohid.</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "#F97316" }}>{detEntry.car}g</div>
+              </div>
+              <div style={{ background: "#e9d5ff", borderRadius: 8, padding: 12, textAlign: "center" }}>
+                <div style={{ fontSize: 10, color: "#333" }}>Grasa</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "#8B5CF6" }}>{detEntry.fat}g</div>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 8 }}>
+              <button onClick={() => removeEntry(detEntry.id)} style={{ flex: 1, padding: 11, background: "#ef4444", color: "#fff", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Eliminar</button>
+              <button onClick={() => setModal(null)} style={{ flex: 1, padding: 11, background: "#f5f5f5", color: "#555", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Cerrar</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL: AGREGAR ALIMENTO */}
+      {modal === "add" && (
+        <div onClick={() => setModal(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 20 }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: 20, width: "100%", maxWidth: 380, maxHeight: "90vh", overflowY: "auto" }}>
+            <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 16, color: GREEN }}>Agregar alimento a {meal}</div>
+            <input ref={searchRef} type="text" placeholder="Busca un alimento..." value={query} onChange={e => setQuery(e.target.value)} style={{ marginBottom: 12 }} />
+
+            {filtered.length > 0 && (
+              <div style={{ background: "#f5f5f5", borderRadius: 10, maxHeight: 300, overflowY: "auto", marginBottom: 12 }}>
+                {filtered.map(f => (
+                  <button key={f.id} onClick={() => selectFood(f)} style={{ width: "100%", padding: 12, textAlign: "left", border: "none", background: "transparent", borderBottom: "1px solid #eee", cursor: "pointer", fontSize: 13 }}>
+                    <div style={{ fontWeight: 600 }}>{f.n}</div>
+                    <div style={{ fontSize: 11, color: "#888" }}>{f.cal} kcal/100g</div>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {selFood && (
+              <div style={{ background: "#f9f9f9", borderRadius: 10, padding: 12, marginBottom: 12 }}>
+                <div style={{ fontSize: 12, color: "#666", marginBottom: 6 }}>Cantidad</div>
+                <input type="number" value={amount} onChange={e => setAmount(Number(e.target.value))} style={{ marginBottom: 12 }} />
+                <div style={{ fontSize: 12, color: "#666", marginBottom: 4 }}>Calorías: {Math.round((amount / (selFood.base || 100)) * selFood.cal)} kcal</div>
+              </div>
+            )}
+
+            <div style={{ display: "flex", gap: 8 }}>
+              <button onClick={addEntry} style={{ flex: 1, padding: 11, background: GREEN, color: "#fff", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Agregar</button>
+              <button onClick={() => setModal(null)} style={{ flex: 1, padding: 11, background: "#f5f5f5", color: "#555", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Cerrar</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL: INFO */}
+      {modal === "info" && (
+        <div onClick={() => setModal(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 20 }}>
+          <div onClick={e => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: 20, width: "100%", maxWidth: 380 }}>
+            <div style={{ textAlign: "center", marginBottom: 20 }}>
+              <div style={{ fontSize: 28, fontWeight: 700, color: GREEN, marginBottom: 4 }}>NUTRIPEAK</div>
+              <div style={{ fontSize: 12, color: "#888" }}>v2.0 - Control Nutricional Inteligente</div>
+            </div>
+
+            <div style={{ background: "#f9f9f9", borderRadius: 12, padding: 14, marginBottom: 16, fontSize: 13, lineHeight: 1.6 }}>
+              <div style={{ fontWeight: 700, color: GREEN, marginBottom: 8 }}>✨ Características v2.0</div>
+              <ul style={{ marginLeft: 16, color: "#666", listStyle: "none" }}>
+                <li style={{marginBottom: 6}}>🎯 Macros inteligentes por objetivo</li>
+                <li style={{marginBottom: 6}}>💪 Proteína científica (1.6-2.2g/kg)</li>
+                <li style={{marginBottom: 6}}>💧 Agua editable con meta personalizada</li>
+                <li style={{marginBottom: 6}}>⚡ Rutinas de ejercicios probadas</li>
+                <li style={{marginBottom: 6}}>📊 Seguimiento de entrenamientos</li>
+                <li>🔄 Todos los datos guardados automáticamente</li>
+              </ul>
+            </div>
+
+            <button onClick={() => setModal(null)} style={{ width: "100%", padding: 11, background: GREEN, color: "#fff", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>Cerrar</button>
+          </div>
+        </div>
+      )}
+
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
