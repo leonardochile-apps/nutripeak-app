@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NUTRIPEAK - Control Nutricional Inteligente</title>
+  <title>NUTRIPEAK - Control Nutricional Inteligente v2.0</title>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,6 +81,7 @@ const WeightChart = ({data}) => {
   );
 };
 
+// RUTINAS DE EJERCICIOS
 const WORKOUT_ROUTINES = {
   "fullbody": {
     name: "Full Body - 3 días/semana",
@@ -195,17 +197,18 @@ function App() {
   const [tab, setTab] = useState("hoy");
   const [date, setDate] = useState(t0());
   const [goal, setGoal] = useState(2000);
-  const [log, setLog] = useState(() => JSON.parse(localStorage.getItem("cal_log") || "{}"));
+  const [log, setLog] = useState(() => JSON.parse(localStorage.getItem("cal_log2") || "{}"));
   const [customDB, setCustomDB] = useState(() => JSON.parse(localStorage.getItem("cal_custom") || "[]"));
   const [dayWater, setDayWater] = useState(0);
   const [waterGoal, setWaterGoal] = useState(9);
-  const [weight, setWeightState] = useState(() => JSON.parse(localStorage.getItem("user_weight") || "75"));
-  const [height, setHeightState] = useState(() => JSON.parse(localStorage.getItem("user_height") || "175"));
-  const [age, setAgeState] = useState(() => JSON.parse(localStorage.getItem("user_age") || "30"));
-  const [sex, setSexState] = useState(() => localStorage.getItem("user_sex") || "M");
-  const [activityLevel, setActivityLevelState] = useState(() => JSON.parse(localStorage.getItem("user_activity") || "1.55"));
-  const [objective, setObjectiveState] = useState(() => localStorage.getItem("user_objective") || "muscleGain");
-  const [selectedRoutine, setSelectedRoutine] = useState(() => localStorage.getItem("selected_routine") || "fullbody");
+  const [weight, setWeightState] = useState(75);
+  const [height, setHeightState] = useState(175);
+  const [age, setAgeState] = useState(30);
+  const [sex, setSexState] = useState("M");
+  const [activityLevel, setActivityLevelState] = useState(1.55);
+  const [objective, setObjectiveState] = useState("muscleGain");
+  const [currentWeight, setCurrentWeight] = useState(75);
+  const [selectedRoutine, setSelectedRoutine] = useState("fullbody");
   const [completedWorkouts, setCompletedWorkouts] = useState(() => JSON.parse(localStorage.getItem("workouts") || "{}"));
   
   const [modal, setModal] = useState(null);
@@ -217,14 +220,6 @@ function App() {
   const [editWaterGoal, setEditWaterGoal] = useState(false);
   const [newWaterGoal, setNewWaterGoal] = useState(waterGoal);
   const searchRef = useRef(null);
-
-  useEffect(() => { localStorage.setItem("user_weight", weight); }, [weight]);
-  useEffect(() => { localStorage.setItem("user_height", height); }, [height]);
-  useEffect(() => { localStorage.setItem("user_age", age); }, [age]);
-  useEffect(() => { localStorage.setItem("user_sex", sex); }, [sex]);
-  useEffect(() => { localStorage.setItem("user_activity", activityLevel); }, [activityLevel]);
-  useEffect(() => { localStorage.setItem("user_objective", objective); }, [objective]);
-  useEffect(() => { localStorage.setItem("selected_routine", selectedRoutine); }, [selectedRoutine]);
 
   const calculateMetrics = () => {
     let tmb;
@@ -280,9 +275,10 @@ function App() {
     setGoal(metrics.dailyGoal);
     setWaterGoal(metrics.water);
     setNewWaterGoal(metrics.water);
+    localStorage.setItem("cal_goal", metrics.dailyGoal);
   }, [metrics]);
 
-  const saveLog = l => { setLog(l); localStorage.setItem("cal_log", JSON.stringify(l)); };
+  const saveLog = l => { setLog(l); localStorage.setItem("cal_log2", JSON.stringify(l)); };
   const saveCustom = c => { setCustomDB(c); localStorage.setItem("cal_custom", JSON.stringify(c)); };
   const saveWorkouts = w => { setCompletedWorkouts(w); localStorage.setItem("workouts", JSON.stringify(w)); };
 
@@ -314,21 +310,12 @@ function App() {
     { id:24, n:"Queso fresco", cal:172, pro:12, car:1.4, fat:13, u:"g", cat:"🥛 Lácteos" },
     { id:30, n:"Arroz blanco", cal:130, pro:2.7, car:28, fat:0.3, u:"g", cat:"🌾 Cereales" },
     { id:31, n:"Arroz integral", cal:111, pro:2.6, car:23, fat:0.9, u:"g", cat:"🌾 Cereales" },
-    { id:32, n:"Pan marraqueta", cal:164, pro:5.5, car:32, fat:1.5, u:"un", cat:"🌾 Cereales", base:65 },
-    { id:34, n:"Pasta cocida", cal:131, pro:5, car:25, fat:1.1, u:"g", cat:"🌾 Cereales" },
-    { id:35, n:"Avena (cruda)", cal:389, pro:17, car:66, fat:7, u:"g", cat:"🌾 Cereales" },
-    { id:36, n:"Papa cocida", cal:87, pro:1.9, car:20, fat:0.1, u:"g", cat:"🌾 Cereales" },
     { id:50, n:"Porotos cocidos", cal:127, pro:8.7, car:23, fat:0.5, u:"g", cat:"🫘 Legumbres" },
-    { id:51, n:"Lentejas cocidas", cal:116, pro:9, car:20, fat:0.4, u:"g", cat:"🫘 Legumbres" },
     { id:60, n:"Lechuga", cal:15, pro:1.4, car:2.9, fat:0.2, u:"g", cat:"🥦 Verduras" },
-    { id:61, n:"Tomate", cal:18, pro:0.9, car:3.9, fat:0.2, u:"g", cat:"🥦 Verduras" },
-    { id:62, n:"Zanahoria", cal:41, pro:0.9, car:10, fat:0.2, u:"g", cat:"🥦 Verduras" },
-    { id:63, n:"Brócoli", cal:34, pro:2.8, car:7, fat:0.4, u:"g", cat:"🥦 Verduras" },
     { id:80, n:"Manzana", cal:95, pro:0.5, car:25, fat:0.3, u:"un", cat:"🍎 Frutas", base:182 },
     { id:81, n:"Plátano", cal:105, pro:1.3, car:27, fat:0.4, u:"un", cat:"🍎 Frutas", base:118 },
     { id:100, n:"Almendras", cal:579, pro:21, car:22, fat:50, u:"g", cat:"🥜 Frutos secos" },
     { id:130, n:"Agua", cal:0, pro:0, car:0, fat:0, u:"ml", cat:"🥤 Bebidas" },
-    { id:131, n:"Café negro", cal:5, pro:0.3, car:0.5, fat:0, u:"ml", cat:"🥤 Bebidas" },
   ];
 
   const DB = useMemo(() => [...DB_BASE, ...customDB], [customDB]);
@@ -442,7 +429,7 @@ function App() {
           {/* Agua + Peso */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
 
-            {/* AGUA */}
+            {/* AGUA MEJORADA */}
             <div style={{ background: "#fff", borderRadius: 14, padding: 14, boxShadow: "0 1px 6px rgba(0,0,0,.06)" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
                 <div>
@@ -797,18 +784,18 @@ function App() {
           <div onClick={e => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: 20, width: "100%", maxWidth: 380 }}>
             <div style={{ textAlign: "center", marginBottom: 20 }}>
               <div style={{ fontSize: 28, fontWeight: 700, color: GREEN, marginBottom: 4 }}>NUTRIPEAK</div>
-              <div style={{ fontSize: 12, color: "#888" }}>v2.0 - Control Nutricional Inteligente</div>
+              <div style={{ fontSize: 12, color: "#888" }}>v2.0 - Control Nutricional + Ejercicios</div>
             </div>
 
             <div style={{ background: "#f9f9f9", borderRadius: 12, padding: 14, marginBottom: 16, fontSize: 13, lineHeight: 1.6 }}>
-              <div style={{ fontWeight: 700, color: GREEN, marginBottom: 8 }}>✨ Características v2.0</div>
-              <ul style={{ marginLeft: 16, color: "#666", listStyle: "none" }}>
-                <li style={{marginBottom: 6}}>🎯 Macros inteligentes por objetivo</li>
-                <li style={{marginBottom: 6}}>💪 Proteína científica (1.6-2.2g/kg)</li>
-                <li style={{marginBottom: 6}}>💧 Agua editable con meta personalizada</li>
-                <li style={{marginBottom: 6}}>⚡ Rutinas de ejercicios probadas</li>
-                <li style={{marginBottom: 6}}>📊 Seguimiento de entrenamientos</li>
-                <li>🔄 Todos los datos guardados automáticamente</li>
+              <div style={{ fontWeight: 700, color: GREEN, marginBottom: 8 }}>✨ Características</div>
+              <ul style={{ marginLeft: 16, color: "#666" }}>
+                <li>🎯 Macros inteligentes por objetivo</li>
+                <li>💧 Agua editable con meta personalizada</li>
+                <li>💪 Rutinas científicas de ejercicios</li>
+                <li>📊 Seguimiento de entrenamientos</li>
+                <li>📈 Cálculo de calorías quemadas</li>
+                <li>⚡ Integración nutricional completa</li>
               </ul>
             </div>
 
