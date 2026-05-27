@@ -179,97 +179,97 @@ const detectPlateau = (weightHistory) => {
 /* ── BASE DE DATOS COMPLETA (160+ ALIMENTOS) ──────────────────────────── */
 const DB_BASE = [
   /* ── PROTEÍNAS ── */
-  { id:1,  n:"Pechuga de pollo (cocida) - Av. Central",    cal:165,pro:31, car:0,  fat:3.6,u:"g",  cat:"🥩 Proteínas" },
-  { id:2,  n:"Muslo de pollo (cocido) - Caja Negra",      cal:209,pro:26, car:0,  fat:11, u:"g",  cat:"🥩 Proteínas" },
-  { id:3,  n:"Carne molida (magra) - Don Juan",         cal:215,pro:26, car:0,  fat:12, u:"g",  cat:"🥩 Proteínas" },
-  { id:4,  n:"Filete de vacuno - Santa Isabel",             cal:250,pro:28, car:0,  fat:15, u:"g",  cat:"🥩 Proteínas" },
-  { id:5,  n:"Atún en agua - Soprole/Jumbo",     cal:116,pro:26, car:0,  fat:1,  u:"g",  cat:"🥩 Proteínas" },
-  { id:6,  n:"Salmón - Multiexport/Aqua Mas",                       cal:208,pro:20, car:0,  fat:13, u:"g",  cat:"🥩 Proteínas" },
-  { id:7,  n:"Merluza - Expres Pescado",                      cal:92, pro:18, car:0,  fat:2,  u:"g",  cat:"🥩 Proteínas" },
-  { id:8,  n:"Huevo entero - Prodal/Huevo Santa María",      cal:70, pro:6,  car:0.4,fat:5,  u:"un", cat:"🥩 Proteínas",base:50 },
-  { id:10, n:"Cerdo lomo - Don Juan",                   cal:242,pro:27, car:0,  fat:14, u:"g",  cat:"🥩 Proteínas" },
-  { id:11, n:"Jamón de pavo - Persana/Politono",                cal:104,pro:15, car:1,  fat:4,  u:"g",  cat:"🥩 Proteínas" },
+  { id:1,  n:"Pechuga de pollo (cocida) - Av. Central",    cal:165,pro:31, car:0,  fat:3.6,u:"g",  cat:" Proteínas" },
+  { id:2,  n:"Muslo de pollo (cocido) - Caja Negra",      cal:209,pro:26, car:0,  fat:11, u:"g",  cat:" Proteínas" },
+  { id:3,  n:"Carne molida (magra) - Don Juan",         cal:215,pro:26, car:0,  fat:12, u:"g",  cat:" Proteínas" },
+  { id:4,  n:"Filete de vacuno - Santa Isabel",             cal:250,pro:28, car:0,  fat:15, u:"g",  cat:" Proteínas" },
+  { id:5,  n:"Atún en agua - Soprole/Jumbo",     cal:116,pro:26, car:0,  fat:1,  u:"g",  cat:" Proteínas" },
+  { id:6,  n:"Salmón - Multiexport/Aqua Mas",                       cal:208,pro:20, car:0,  fat:13, u:"g",  cat:" Proteínas" },
+  { id:7,  n:"Merluza - Expres Pescado",                      cal:92, pro:18, car:0,  fat:2,  u:"g",  cat:" Proteínas" },
+  { id:8,  n:"Huevo entero - Prodal/Huevo Santa María",      cal:70, pro:6,  car:0.4,fat:5,  u:"un", cat:" Proteínas",base:50 },
+  { id:10, n:"Cerdo lomo - Don Juan",                   cal:242,pro:27, car:0,  fat:14, u:"g",  cat:" Proteínas" },
+  { id:11, n:"Jamón de pavo - Persana/Politono",                cal:104,pro:15, car:1,  fat:4,  u:"g",  cat:" Proteínas" },
   
   /* ── LÁCTEOS ── */
-  { id:20, n:"Leche entera - Soprole/Lider",                 cal:61, pro:3.2,car:4.8,fat:3.3,u:"ml", cat:"🥛 Lácteos" },
-  { id:21, n:"Leche descremada - Colun",             cal:34, pro:3.4,car:5,  fat:0.1,u:"ml", cat:"🥛 Lácteos" },
-  { id:22, n:"Yogur natural - Jumbo/Tottus",   cal:59, pro:3.5,car:4,  fat:3.3,u:"g",  cat:"🥛 Lácteos" },
-  { id:23, n:"Yogur descremado - Soprole",             cal:38, pro:4,  car:5,  fat:0.5,u:"g",  cat:"🥛 Lácteos" },
-  { id:24, n:"Queso fresco - Quesería Maguilú",                 cal:172,pro:12, car:1.4,fat:13, u:"g",  cat:"🥛 Lácteos" },
-  { id:25, n:"Queso mantecoso - Santa Isabel",              cal:330,pro:22, car:0,  fat:27, u:"g",  cat:"🥛 Lácteos" },
-  { id:26, n:"Quesillo - Soprole",                     cal:130,pro:15, car:1,  fat:7,  u:"g",  cat:"🥛 Lácteos" },
+  { id:20, n:"Leche entera - Soprole/Lider",                 cal:61, pro:3.2,car:4.8,fat:3.3,u:"ml", cat:" Lácteos" },
+  { id:21, n:"Leche descremada - Colun",             cal:34, pro:3.4,car:5,  fat:0.1,u:"ml", cat:" Lácteos" },
+  { id:22, n:"Yogur natural - Jumbo/Tottus",   cal:59, pro:3.5,car:4,  fat:3.3,u:"g",  cat:" Lácteos" },
+  { id:23, n:"Yogur descremado - Soprole",             cal:38, pro:4,  car:5,  fat:0.5,u:"g",  cat:" Lácteos" },
+  { id:24, n:"Queso fresco - Quesería Maguilú",                 cal:172,pro:12, car:1.4,fat:13, u:"g",  cat:" Lácteos" },
+  { id:25, n:"Queso mantecoso - Santa Isabel",              cal:330,pro:22, car:0,  fat:27, u:"g",  cat:" Lácteos" },
+  { id:26, n:"Quesillo - Soprole",                     cal:130,pro:15, car:1,  fat:7,  u:"g",  cat:" Lácteos" },
   
   /* ── CEREALES ── */
-  { id:30, n:"Arroz blanco - Mahatma/Aralda",        cal:130,pro:2.7,car:28, fat:0.3,u:"g",  cat:"🌾 Cereales" },
-  { id:31, n:"Arroz integral - Aralda/Jumbo",      cal:111,pro:2.6,car:23, fat:0.9,u:"g",  cat:"🌾 Cereales" },
-  { id:32, n:"Pan marraqueta - Amasandería local",    cal:164,pro:5.5,car:32, fat:1.5,u:"un", cat:"🌾 Cereales",base:65 },
-  { id:33, n:"Pan integral - Bimbo/Ideal",    cal:80, pro:4,  car:15, fat:1,  u:"un", cat:"🌾 Cereales",base:35 },
-  { id:34, n:"Pasta cocida - Lider Brand",                 cal:131,pro:5,  car:25, fat:1.1,u:"g",  cat:"🌾 Cereales" },
-  { id:35, n:"Avena (cruda)",                cal:389,pro:17, car:66, fat:7,  u:"g",  cat:"🌾 Cereales" },
-  { id:36, n:"Papa cocida",                  cal:87, pro:1.9,car:20, fat:0.1,u:"g",  cat:"🌾 Cereales" },
-  { id:37, n:"Camote cocido",                cal:90, pro:2,  car:21, fat:0.1,u:"g",  cat:"🌾 Cereales" },
-  { id:38, n:"Quinoa cocida",                cal:120,pro:4.4,car:21, fat:1.9,u:"g",  cat:"🌾 Cereales" },
-  { id:39, n:"Galleta de arroz (1 unidad)",  cal:35, pro:0.7,car:7,  fat:0.3,u:"un", cat:"🌾 Cereales",base:9 },
+  { id:30, n:"Arroz blanco - Mahatma/Aralda",        cal:130,pro:2.7,car:28, fat:0.3,u:"g",  cat:" Cereales" },
+  { id:31, n:"Arroz integral - Aralda/Jumbo",      cal:111,pro:2.6,car:23, fat:0.9,u:"g",  cat:" Cereales" },
+  { id:32, n:"Pan marraqueta - Amasandería local",    cal:164,pro:5.5,car:32, fat:1.5,u:"un", cat:" Cereales",base:65 },
+  { id:33, n:"Pan integral - Bimbo/Ideal",    cal:80, pro:4,  car:15, fat:1,  u:"un", cat:" Cereales",base:35 },
+  { id:34, n:"Pasta cocida - Lider Brand",                 cal:131,pro:5,  car:25, fat:1.1,u:"g",  cat:" Cereales" },
+  { id:35, n:"Avena (cruda)",                cal:389,pro:17, car:66, fat:7,  u:"g",  cat:" Cereales" },
+  { id:36, n:"Papa cocida",                  cal:87, pro:1.9,car:20, fat:0.1,u:"g",  cat:" Cereales" },
+  { id:37, n:"Camote cocido",                cal:90, pro:2,  car:21, fat:0.1,u:"g",  cat:" Cereales" },
+  { id:38, n:"Quinoa cocida",                cal:120,pro:4.4,car:21, fat:1.9,u:"g",  cat:" Cereales" },
+  { id:39, n:"Galleta de arroz (1 unidad)",  cal:35, pro:0.7,car:7,  fat:0.3,u:"un", cat:" Cereales",base:9 },
   
   /* ── LEGUMBRES ── */
-  { id:50, n:"Porotos cocidos",              cal:127,pro:8.7,car:23, fat:0.5,u:"g",  cat:"🫘 Legumbres" },
-  { id:51, n:"Lentejas cocidas",             cal:116,pro:9,  car:20, fat:0.4,u:"g",  cat:"🫘 Legumbres" },
-  { id:52, n:"Garbanzos cocidos",            cal:164,pro:8.9,car:27, fat:2.6,u:"g",  cat:"🫘 Legumbres" },
-  { id:53, n:"Arvejas cocidas",              cal:84, pro:5.4,car:15, fat:0.4,u:"g",  cat:"🫘 Legumbres" },
+  { id:50, n:"Porotos cocidos",              cal:127,pro:8.7,car:23, fat:0.5,u:"g",  cat:" Legumbres" },
+  { id:51, n:"Lentejas cocidas",             cal:116,pro:9,  car:20, fat:0.4,u:"g",  cat:" Legumbres" },
+  { id:52, n:"Garbanzos cocidos",            cal:164,pro:8.9,car:27, fat:2.6,u:"g",  cat:" Legumbres" },
+  { id:53, n:"Arvejas cocidas",              cal:84, pro:5.4,car:15, fat:0.4,u:"g",  cat:" Legumbres" },
   
   /* ── VERDURAS ── */
-  { id:60, n:"Lechuga",                      cal:15, pro:1.4,car:2.9,fat:0.2,u:"g",  cat:"🥦 Verduras" },
-  { id:61, n:"Tomate",                       cal:18, pro:0.9,car:3.9,fat:0.2,u:"g",  cat:"🥦 Verduras" },
-  { id:62, n:"Zanahoria",                    cal:41, pro:0.9,car:10, fat:0.2,u:"g",  cat:"🥦 Verduras" },
-  { id:63, n:"Brócoli",                      cal:34, pro:2.8,car:7,  fat:0.4,u:"g",  cat:"🥦 Verduras" },
-  { id:64, n:"Espinaca",                     cal:23, pro:2.9,car:3.6,fat:0.4,u:"g",  cat:"🥦 Verduras" },
-  { id:65, n:"Pepino",                       cal:16, pro:0.7,car:3.6,fat:0.1,u:"g",  cat:"🥦 Verduras" },
-  { id:66, n:"Palta (1/2 unidad)",           cal:120,pro:1.5,car:6,  fat:11, u:"un", cat:"🥦 Verduras",base:75 },
-  { id:67, n:"Cebolla",                      cal:40, pro:1.1,car:9,  fat:0.1,u:"g",  cat:"🥦 Verduras" },
-  { id:68, n:"Pimentón rojo",                cal:31, pro:1,  car:6,  fat:0.3,u:"g",  cat:"🥦 Verduras" },
-  { id:69, n:"Zapallo cocido",               cal:26, pro:1,  car:6.5,fat:0.1,u:"g",  cat:"🥦 Verduras" },
-  { id:70, n:"Coliflor",                     cal:25, pro:1.9,car:5,  fat:0.3,u:"g",  cat:"🥦 Verduras" },
-  { id:71, n:"Betarraga cocida",             cal:44, pro:1.7,car:10, fat:0.2,u:"g",  cat:"🥦 Verduras" },
+  { id:60, n:"Lechuga",                      cal:15, pro:1.4,car:2.9,fat:0.2,u:"g",  cat:" Verduras" },
+  { id:61, n:"Tomate",                       cal:18, pro:0.9,car:3.9,fat:0.2,u:"g",  cat:" Verduras" },
+  { id:62, n:"Zanahoria",                    cal:41, pro:0.9,car:10, fat:0.2,u:"g",  cat:" Verduras" },
+  { id:63, n:"Brócoli",                      cal:34, pro:2.8,car:7,  fat:0.4,u:"g",  cat:" Verduras" },
+  { id:64, n:"Espinaca",                     cal:23, pro:2.9,car:3.6,fat:0.4,u:"g",  cat:" Verduras" },
+  { id:65, n:"Pepino",                       cal:16, pro:0.7,car:3.6,fat:0.1,u:"g",  cat:" Verduras" },
+  { id:66, n:"Palta (1/2 unidad)",           cal:120,pro:1.5,car:6,  fat:11, u:"un", cat:" Verduras",base:75 },
+  { id:67, n:"Cebolla",                      cal:40, pro:1.1,car:9,  fat:0.1,u:"g",  cat:" Verduras" },
+  { id:68, n:"Pimentón rojo",                cal:31, pro:1,  car:6,  fat:0.3,u:"g",  cat:" Verduras" },
+  { id:69, n:"Zapallo cocido",               cal:26, pro:1,  car:6.5,fat:0.1,u:"g",  cat:" Verduras" },
+  { id:70, n:"Coliflor",                     cal:25, pro:1.9,car:5,  fat:0.3,u:"g",  cat:" Verduras" },
+  { id:71, n:"Betarraga cocida",             cal:44, pro:1.7,car:10, fat:0.2,u:"g",  cat:" Verduras" },
   
   /* ── FRUTAS ── */
-  { id:80, n:"Manzana (1 unidad med.)",      cal:95, pro:0.5,car:25, fat:0.3,u:"un", cat:"🍎 Frutas",base:182 },
-  { id:81, n:"Plátano (1 unidad med.)",      cal:105,pro:1.3,car:27, fat:0.4,u:"un", cat:"🍎 Frutas",base:118 },
-  { id:82, n:"Naranja (1 unidad med.)",      cal:62, pro:1.2,car:15, fat:0.2,u:"un", cat:"🍎 Frutas",base:131 },
-  { id:83, n:"Pera (1 unidad med.)",         cal:101,pro:0.7,car:27, fat:0.2,u:"un", cat:"🍎 Frutas",base:178 },
-  { id:84, n:"Frutilla",                     cal:32, pro:0.7,car:7.7,fat:0.3,u:"g",  cat:"🍎 Frutas" },
-  { id:85, n:"Uva",                          cal:69, pro:0.7,car:18, fat:0.2,u:"g",  cat:"🍎 Frutas" },
-  { id:86, n:"Sandía",                       cal:30, pro:0.6,car:7.6,fat:0.2,u:"g",  cat:"🍎 Frutas" },
-  { id:87, n:"Durazno (1 unidad med.)",      cal:58, pro:1.4,car:14, fat:0.4,u:"un", cat:"🍎 Frutas",base:147 },
-  { id:88, n:"Kiwi (1 unidad)",              cal:42, pro:0.8,car:10, fat:0.4,u:"un", cat:"🍎 Frutas",base:69 },
+  { id:80, n:"Manzana (1 unidad med.)",      cal:95, pro:0.5,car:25, fat:0.3,u:"un", cat:" Frutas",base:182 },
+  { id:81, n:"Plátano (1 unidad med.)",      cal:105,pro:1.3,car:27, fat:0.4,u:"un", cat:" Frutas",base:118 },
+  { id:82, n:"Naranja (1 unidad med.)",      cal:62, pro:1.2,car:15, fat:0.2,u:"un", cat:" Frutas",base:131 },
+  { id:83, n:"Pera (1 unidad med.)",         cal:101,pro:0.7,car:27, fat:0.2,u:"un", cat:" Frutas",base:178 },
+  { id:84, n:"Frutilla",                     cal:32, pro:0.7,car:7.7,fat:0.3,u:"g",  cat:" Frutas" },
+  { id:85, n:"Uva",                          cal:69, pro:0.7,car:18, fat:0.2,u:"g",  cat:" Frutas" },
+  { id:86, n:"Sandía",                       cal:30, pro:0.6,car:7.6,fat:0.2,u:"g",  cat:" Frutas" },
+  { id:87, n:"Durazno (1 unidad med.)",      cal:58, pro:1.4,car:14, fat:0.4,u:"un", cat:" Frutas",base:147 },
+  { id:88, n:"Kiwi (1 unidad)",              cal:42, pro:0.8,car:10, fat:0.4,u:"un", cat:" Frutas",base:69 },
   
   /* ── FRUTOS SECOS ── */
-  { id:100,n:"Almendras",                    cal:579,pro:21, car:22, fat:50, u:"g",  cat:"🥜 Frutos secos" },
-  { id:101,n:"Nueces",                       cal:654,pro:15, car:14, fat:65, u:"g",  cat:"🥜 Frutos secos" },
-  { id:102,n:"Maní (sin sal)",               cal:567,pro:26, car:16, fat:49, u:"g",  cat:"🥜 Frutos secos" },
-  { id:103,n:"Aceite de oliva (1 cdta)",     cal:40, pro:0,  car:0,  fat:4.5,u:"un", cat:"🥜 Frutos secos",base:4.5 },
+  { id:100,n:"Almendras",                    cal:579,pro:21, car:22, fat:50, u:"g",  cat:" Frutos secos" },
+  { id:101,n:"Nueces",                       cal:654,pro:15, car:14, fat:65, u:"g",  cat:" Frutos secos" },
+  { id:102,n:"Maní (sin sal)",               cal:567,pro:26, car:16, fat:49, u:"g",  cat:" Frutos secos" },
+  { id:103,n:"Aceite de oliva (1 cdta)",     cal:40, pro:0,  car:0,  fat:4.5,u:"un", cat:" Frutos secos",base:4.5 },
   
   /* ── COCINA CHILENA ── */
-  { id:110,n:"Cazuela de vacuno (1 plato)",  cal:280,pro:22, car:28, fat:8,  u:"pl", cat:"🇨🇱 Cocina chilena",base:400 },
-  { id:111,n:"Empanada de pino (1 unidad)",  cal:380,pro:18, car:42, fat:16, u:"un", cat:"🇨🇱 Cocina chilena",base:180 },
-  { id:112,n:"Pastel de choclo (1 porción)", cal:310,pro:14, car:38, fat:11, u:"pl", cat:"🇨🇱 Cocina chilena",base:350 },
-  { id:113,n:"Charquicán (1 plato)",         cal:260,pro:18, car:30, fat:8,  u:"pl", cat:"🇨🇱 Cocina chilena",base:350 },
-  { id:114,n:"Porotos con riendas",          cal:220,pro:12, car:38, fat:4,  u:"g",  cat:"🇨🇱 Cocina chilena" },
-  { id:115,n:"Ensalada chilena",             cal:35, pro:1,  car:7,  fat:0.5,u:"g",  cat:"🇨🇱 Cocina chilena" },
-  { id:116,n:"Sopaipilla (1 unidad)",        cal:170,pro:3,  car:24, fat:7,  u:"un", cat:"🇨🇱 Cocina chilena",base:70 },
-  { id:119,n:"Sopa de fideos (1 taza)",      cal:100,pro:3.5,car:18, fat:1.5,u:"pl", cat:"🇨🇱 Cocina chilena",base:250 },
-  { id:250,n:"Completo chileno",             cal:480,pro:18, car:48, fat:24, u:"un", cat:"🇨🇱 Cocina chilena",base:200 },
-  { id:251,n:"Choripán",                     cal:420,pro:16, car:42, fat:22, u:"un", cat:"🇨🇱 Cocina chilena",base:180 },
-  { id:252,n:"Empanada de carne",            cal:300,pro:12, car:28, fat:16, u:"un", cat:"🇨🇱 Cocina chilena",base:150 },
-  { id:253,n:"Empanada de queso",            cal:280,pro:10, car:27, fat:15, u:"un", cat:"🇨🇱 Cocina chilena",base:140 },
-  { id:254,n:"Empanada de mariscos",         cal:320,pro:14, car:26, fat:18, u:"un", cat:"🇨🇱 Cocina chilena",base:160 },
-  { id:256,n:"Pastel de verduras",           cal:140,pro:5,  car:16, fat:7,  u:"pl", cat:"🇨🇱 Cocina chilena",base:180 },
-  { id:257,n:"Arrollado huaso",              cal:220,pro:18, car:8,  fat:12, u:"un", cat:"🇨🇱 Cocina chilena",base:100 },
-  { id:258,n:"Panqueques",                   cal:250,pro:8,  car:32, fat:10, u:"un", cat:"🇨🇱 Cocina chilena",base:100 },
-  { id:259,n:"Humita",                       cal:240,pro:7,  car:28, fat:12, u:"un", cat:"🇨🇱 Cocina chilena",base:120 },
-  { id:260,n:"Ceviche de congrio",           cal:120,pro:21, car:4,  fat:2,  u:"pl", cat:"🇨🇱 Cocina chilena",base:200 },
-  { id:261,n:"Picante de congrio",           cal:180,pro:22, car:8,  fat:7,  u:"pl", cat:"🇨🇱 Cocina chilena",base:250 },
-  { id:262,n:"Curanto (1 porción)",          cal:200,pro:18, car:10, fat:10, u:"pl", cat:"🇨🇱 Cocina chilena",base:300 },
-  { id:263,n:"Sopaipilla con pebre",         cal:320,pro:6,  car:38, fat:16, u:"un", cat:"🇨🇱 Cocina chilena",base:150 },
+  { id:110,n:"Cazuela de vacuno (1 plato)",  cal:280,pro:22, car:28, fat:8,  u:"pl", cat:" Cocina chilena",base:400 },
+  { id:111,n:"Empanada de pino (1 unidad)",  cal:380,pro:18, car:42, fat:16, u:"un", cat:" Cocina chilena",base:180 },
+  { id:112,n:"Pastel de choclo (1 porción)", cal:310,pro:14, car:38, fat:11, u:"pl", cat:" Cocina chilena",base:350 },
+  { id:113,n:"Charquicán (1 plato)",         cal:260,pro:18, car:30, fat:8,  u:"pl", cat:" Cocina chilena",base:350 },
+  { id:114,n:"Porotos con riendas",          cal:220,pro:12, car:38, fat:4,  u:"g",  cat:" Cocina chilena" },
+  { id:115,n:"Ensalada chilena",             cal:35, pro:1,  car:7,  fat:0.5,u:"g",  cat:" Cocina chilena" },
+  { id:116,n:"Sopaipilla (1 unidad)",        cal:170,pro:3,  car:24, fat:7,  u:"un", cat:" Cocina chilena",base:70 },
+  { id:119,n:"Sopa de fideos (1 taza)",      cal:100,pro:3.5,car:18, fat:1.5,u:"pl", cat:" Cocina chilena",base:250 },
+  { id:250,n:"Completo chileno",             cal:480,pro:18, car:48, fat:24, u:"un", cat:" Cocina chilena",base:200 },
+  { id:251,n:"Choripán",                     cal:420,pro:16, car:42, fat:22, u:"un", cat:" Cocina chilena",base:180 },
+  { id:252,n:"Empanada de carne",            cal:300,pro:12, car:28, fat:16, u:"un", cat:" Cocina chilena",base:150 },
+  { id:253,n:"Empanada de queso",            cal:280,pro:10, car:27, fat:15, u:"un", cat:" Cocina chilena",base:140 },
+  { id:254,n:"Empanada de mariscos",         cal:320,pro:14, car:26, fat:18, u:"un", cat:" Cocina chilena",base:160 },
+  { id:256,n:"Pastel de verduras",           cal:140,pro:5,  car:16, fat:7,  u:"pl", cat:" Cocina chilena",base:180 },
+  { id:257,n:"Arrollado huaso",              cal:220,pro:18, car:8,  fat:12, u:"un", cat:" Cocina chilena",base:100 },
+  { id:258,n:"Panqueques",                   cal:250,pro:8,  car:32, fat:10, u:"un", cat:" Cocina chilena",base:100 },
+  { id:259,n:"Humita",                       cal:240,pro:7,  car:28, fat:12, u:"un", cat:" Cocina chilena",base:120 },
+  { id:260,n:"Ceviche de congrio",           cal:120,pro:21, car:4,  fat:2,  u:"pl", cat:" Cocina chilena",base:200 },
+  { id:261,n:"Picante de congrio",           cal:180,pro:22, car:8,  fat:7,  u:"pl", cat:" Cocina chilena",base:250 },
+  { id:262,n:"Curanto (1 porción)",          cal:200,pro:18, car:10, fat:10, u:"pl", cat:" Cocina chilena",base:300 },
+  { id:263,n:"Sopaipilla con pebre",         cal:320,pro:6,  car:38, fat:16, u:"un", cat:" Cocina chilena",base:150 },
   
   /* ── COMIDA RÁPIDA ── */
   { id:200,n:"Hamburguesa simple",           cal:540,pro:28, car:40, fat:28, u:"un", cat:"🍔 Comida rápida",base:215 },
@@ -295,41 +295,41 @@ const DB_BASE = [
   { id:220,n:"Sándwich tostado",             cal:420,pro:16, car:45, fat:18, u:"un", cat:"🍔 Comida rápida",base:170 },
   
   /* ── BEBIDAS ── */
-  { id:130,n:"Agua",                         cal:0,  pro:0,  car:0,  fat:0,  u:"ml", cat:"🥤 Bebidas" },
-  { id:131,n:"Té (sin azúcar)",              cal:2,  pro:0,  car:0.5,fat:0,  u:"ml", cat:"🥤 Bebidas" },
-  { id:132,n:"Café negro (sin azúcar)",      cal:5,  pro:0.3,car:0.5,fat:0,  u:"ml", cat:"🥤 Bebidas" },
-  { id:133,n:"Jugo de naranja natural",      cal:45, pro:0.7,car:10, fat:0.2,u:"ml", cat:"🥤 Bebidas" },
-  { id:135,n:"Bebida cola (regular)",        cal:42, pro:0,  car:11, fat:0,  u:"ml", cat:"🥤 Bebidas" },
-  { id:147,n:"Té con leche (sin azúcar)",    cal:25, pro:1,  car:2,  fat:1.5,u:"ml", cat:"🥤 Bebidas",base:200 },
+  { id:130,n:"Agua",                         cal:0,  pro:0,  car:0,  fat:0,  u:"ml", cat:" Bebidas" },
+  { id:131,n:"Té (sin azúcar)",              cal:2,  pro:0,  car:0.5,fat:0,  u:"ml", cat:" Bebidas" },
+  { id:132,n:"Café negro (sin azúcar)",      cal:5,  pro:0.3,car:0.5,fat:0,  u:"ml", cat:" Bebidas" },
+  { id:133,n:"Jugo de naranja natural",      cal:45, pro:0.7,car:10, fat:0.2,u:"ml", cat:" Bebidas" },
+  { id:135,n:"Bebida cola (regular)",        cal:42, pro:0,  car:11, fat:0,  u:"ml", cat:" Bebidas" },
+  { id:147,n:"Té con leche (sin azúcar)",    cal:25, pro:1,  car:2,  fat:1.5,u:"ml", cat:" Bebidas",base:200 },
   
   /* ── SNACKS ── */
-  { id:140,n:"Chocolate negro 70% (1 cuad)", cal:55, pro:0.7,car:4,  fat:4,  u:"un", cat:"🍫 Snacks",base:10 },
-  { id:141,n:"Granola (sin azúcar)",         cal:420,pro:11, car:64, fat:15, u:"g",  cat:"🍫 Snacks" },
-  { id:142,n:"Barrita de cereal",            cal:120,pro:2,  car:22, fat:3,  u:"un", cat:"🍫 Snacks",base:28 },
-  { id:145,n:"Hummus",                       cal:177,pro:8,  car:20, fat:8,  u:"g",  cat:"🍫 Snacks" },
-  { id:146,n:"Mix de frutos secos",          cal:500,pro:13, car:27, fat:42, u:"g",  cat:"🍫 Snacks" },
+  { id:140,n:"Chocolate negro 70% (1 cuad)", cal:55, pro:0.7,car:4,  fat:4,  u:"un", cat:" Snacks",base:10 },
+  { id:141,n:"Granola (sin azúcar)",         cal:420,pro:11, car:64, fat:15, u:"g",  cat:" Snacks" },
+  { id:142,n:"Barrita de cereal",            cal:120,pro:2,  car:22, fat:3,  u:"un", cat:" Snacks",base:28 },
+  { id:145,n:"Hummus",                       cal:177,pro:8,  car:20, fat:8,  u:"g",  cat:" Snacks" },
+  { id:146,n:"Mix de frutos secos",          cal:500,pro:13, car:27, fat:42, u:"g",  cat:" Snacks" },
   
   /* ── SUPLEMENTOS DEPORTIVOS ── */
-  { id:300,n:"Whey Protein (1 scoop)",       cal:120,pro:25, car:2,  fat:1,  u:"un", cat:"💪 Suplementos",base:30 },
-  { id:301,n:"Whey Protein + Carbos",        cal:180,pro:20, car:15, fat:2,  u:"un", cat:"💪 Suplementos",base:45 },
-  { id:302,n:"BCAA (Energy Drink)",          cal:20, pro:0,  car:5,  fat:0,  u:"ml", cat:"💪 Suplementos",base:250 },
-  { id:303,n:"Creatina Monohidrato",         cal:0,  pro:0,  car:0,  fat:0,  u:"g",  cat:"💪 Suplementos" },
-  { id:304,n:"Glutamina",                    cal:4,  pro:1,  car:0,  fat:0,  u:"g",  cat:"💪 Suplementos" },
-  { id:305,n:"Pre-Entreno (típico)",         cal:15, pro:0,  car:3,  fat:0,  u:"un", cat:"💪 Suplementos",base:5 },
-  { id:306,n:"Barrita proteica",             cal:220,pro:20, car:24, fat:6,  u:"un", cat:"💪 Suplementos",base:65 },
-  { id:307,n:"Batido de proteína casero",    cal:280,pro:30, car:20, fat:8,  u:"ml", cat:"💪 Suplementos",base:300 },
-  { id:308,n:"Colágeno (polvo)",             cal:40, pro:9,  car:0,  fat:0,  u:"g",  cat:"💪 Suplementos" },
-  { id:309,n:"Omega-3 (cápsula)",            cal:9,  pro:0,  car:0,  fat:1,  u:"un", cat:"💪 Suplementos",base:1 },
-  { id:310,n:"Magnesio (tableta)",           cal:0,  pro:0,  car:0,  fat:0,  u:"un", cat:"💪 Suplementos",base:1 },
-  { id:311,n:"Vitamina D3 (gotas)",          cal:0,  pro:0,  car:0,  fat:0,  u:"ml", cat:"💪 Suplementos",base:1 },
-  { id:312,n:"Zinc (tableta)",               cal:0,  pro:0,  car:0,  fat:0,  u:"un", cat:"💪 Suplementos",base:1 },
-  { id:313,n:"Vitamina C (tableta)",         cal:4,  pro:0,  car:1,  fat:0,  u:"un", cat:"💪 Suplementos",base:1 },
-  { id:314,n:"Calcio (polvo)",               cal:8,  pro:2,  car:0,  fat:0,  u:"g",  cat:"💪 Suplementos" },
-  { id:315,n:"Hierro (gota)",                cal:0,  pro:0,  car:0,  fat:0,  u:"ml", cat:"💪 Suplementos",base:1 },
-  { id:316,n:"Multivitamínico",              cal:5,  pro:0,  car:1,  fat:0,  u:"un", cat:"💪 Suplementos",base:1 },
-  { id:317,n:"Proteína vegana",              cal:115,pro:24, car:3,  fat:1,  u:"un", cat:"💪 Suplementos",base:30 },
-  { id:318,n:"Gainer (ganador de peso)",     cal:400,pro:20, car:60, fat:5,  u:"un", cat:"💪 Suplementos",base:100 },
-  { id:319,n:"Vitamina B12 (tableta)",       cal:0,  pro:0,  car:0,  fat:0,  u:"un", cat:"💪 Suplementos",base:1 },
+  { id:300,n:"Whey Protein (1 scoop)",       cal:120,pro:25, car:2,  fat:1,  u:"un", cat:"Suplementos",base:30 },
+  { id:301,n:"Whey Protein + Carbos",        cal:180,pro:20, car:15, fat:2,  u:"un", cat:"Suplementos",base:45 },
+  { id:302,n:"BCAA (Energy Drink)",          cal:20, pro:0,  car:5,  fat:0,  u:"ml", cat:"Suplementos",base:250 },
+  { id:303,n:"Creatina Monohidrato",         cal:0,  pro:0,  car:0,  fat:0,  u:"g",  cat:"Suplementos" },
+  { id:304,n:"Glutamina",                    cal:4,  pro:1,  car:0,  fat:0,  u:"g",  cat:"Suplementos" },
+  { id:305,n:"Pre-Entreno (típico)",         cal:15, pro:0,  car:3,  fat:0,  u:"un", cat:"Suplementos",base:5 },
+  { id:306,n:"Barrita proteica",             cal:220,pro:20, car:24, fat:6,  u:"un", cat:"Suplementos",base:65 },
+  { id:307,n:"Batido de proteína casero",    cal:280,pro:30, car:20, fat:8,  u:"ml", cat:"Suplementos",base:300 },
+  { id:308,n:"Colágeno (polvo)",             cal:40, pro:9,  car:0,  fat:0,  u:"g",  cat:"Suplementos" },
+  { id:309,n:"Omega-3 (cápsula)",            cal:9,  pro:0,  car:0,  fat:1,  u:"un", cat:"Suplementos",base:1 },
+  { id:310,n:"Magnesio (tableta)",           cal:0,  pro:0,  car:0,  fat:0,  u:"un", cat:"Suplementos",base:1 },
+  { id:311,n:"Vitamina D3 (gotas)",          cal:0,  pro:0,  car:0,  fat:0,  u:"ml", cat:"Suplementos",base:1 },
+  { id:312,n:"Zinc (tableta)",               cal:0,  pro:0,  car:0,  fat:0,  u:"un", cat:"Suplementos",base:1 },
+  { id:313,n:"Vitamina C (tableta)",         cal:4,  pro:0,  car:1,  fat:0,  u:"un", cat:"Suplementos",base:1 },
+  { id:314,n:"Calcio (polvo)",               cal:8,  pro:2,  car:0,  fat:0,  u:"g",  cat:"Suplementos" },
+  { id:315,n:"Hierro (gota)",                cal:0,  pro:0,  car:0,  fat:0,  u:"ml", cat:"Suplementos",base:1 },
+  { id:316,n:"Multivitamínico",              cal:5,  pro:0,  car:1,  fat:0,  u:"un", cat:"Suplementos",base:1 },
+  { id:317,n:"Proteína vegana",              cal:115,pro:24, car:3,  fat:1,  u:"un", cat:"Suplementos",base:30 },
+  { id:318,n:"Gainer (ganador de peso)",     cal:400,pro:20, car:60, fat:5,  u:"un", cat:"Suplementos",base:100 },
+  { id:319,n:"Vitamina B12 (tableta)",       cal:0,  pro:0,  car:0,  fat:0,  u:"un", cat:"Suplementos",base:1 },
 ];
 
 /* ── BASE DE DATOS DE RECETAS ──────────────────────────────────────── */
@@ -468,7 +468,7 @@ function App() {
   const [workoutLog, setWorkoutLog] = useState(()=>JSON.parse(localStorage.getItem("workout_log")||"{}"));
   const [customDB, setCustomDB] = useState(()=>JSON.parse(localStorage.getItem("cal_custom")||"[]"));
   const [detEntry, setDetEntry] = useState(null);
-  const [newFood, setNewFood] = useState({n:"",cal:"",pro:"",car:"",fat:"",cat:"⭐ Mis alimentos",u:"g"});
+  const [newFood, setNewFood] = useState({n:"",cal:"",pro:"",car:"",fat:"",cat:" Mis alimentos",u:"g"});
   const [userProfile, setUserProfile] = useState(()=>JSON.parse(localStorage.getItem("cal_profile")||JSON.stringify({weight:70,height:170,age:30,sex:"M",activityLevel:"moderate",objective:"maintenance",goalWeight:70})));
   const [water, setWaterState] = useState(8);
   const [waterGoal] = useState(16);
@@ -583,7 +583,7 @@ function App() {
     const food = { id:"c"+Date.now(), n:n.trim(), cal:Number(cal), pro:Number(pro)||0,
       car:Number(car)||0, fat:Number(fat)||0, cat, u, custom:true };
     saveCustom([...customDB, food]);
-    setNewFood({n:"",cal:"",pro:"",car:"",fat:"",cat:"⭐ Mis alimentos",u:"g"});
+    setNewFood({n:"",cal:"",pro:"",car:"",fat:"",cat:" Mis alimentos",u:"g"});
     setModal("add");
   };
 
@@ -658,11 +658,11 @@ function App() {
           </button>
           <div style={{fontSize:15,fontWeight:700}}>Mi registro</div>
           <button onClick={()=>setModal("feedback")} style={{background:"rgba(255,255,255,.2)",border:"none",borderRadius:99,padding:"4px 12px",color:"#fff",fontSize:12,cursor:"pointer",fontWeight:600}}>
-            💬 Feedback
+            Feedback
           </button>
         </div>
         <div style={{display:"flex",gap:4,overflowX:"auto"}}>
-          {[["hoy","Hoy"],["entrenamientos","💪"],["mis","Alimentos"],["recetas","🍽️"],["analisis","📊"]].map(([k,l])=>(
+          {[["hoy","Hoy"],["entrenamientos","Entrenamientos"],["mis","Mis alimentos"],["recetas","Recetas"],["analisis","Análisis"]].map(([k,l])=>(
             <button key={k} onClick={()=>setTab(k)} style={{
               background:tab===k?"rgba(255,255,255,.25)":"transparent",
               border:"none",borderRadius:"8px 8px 0 0",padding:"6px 12px",
@@ -707,14 +707,14 @@ function App() {
 
           {isPlateau && (
             <div style={{background:"#FEF3C7",borderLeft:`4px solid #F59E0B`,borderRadius:8,padding:12,marginBottom:12,fontSize:13}}>
-              <div style={{fontWeight:600,color:"#78350F",marginBottom:4}}>⚠️ Meseta detectada</div>
+              <div style={{fontWeight:600,color:"#78350F",marginBottom:4}}>Meseta detectada</div>
               <div style={{color:"#92400E",fontSize:12}}>Sin cambios en 2 semanas. Reduce calorías -5% o aumenta ejercicio.</div>
             </div>
           )}
 
           {prediction && (
             <div style={{background:"#DBEAFE",borderLeft:`4px solid ${BLUE}`,borderRadius:8,padding:12,marginBottom:12}}>
-              <div style={{fontWeight:600,color:"#1E40AF",marginBottom:4}}>🎯 Meta en {prediction.weeks} semanas</div>
+              <div style={{fontWeight:600,color:"#1E40AF",marginBottom:4}}>Meta en {prediction.weeks} semanas</div>
               <div style={{color:"#1E3A8A",fontSize:12}}>{prediction.date.toLocaleDateString('es-CL')}</div>
             </div>
           )}
@@ -722,12 +722,10 @@ function App() {
           {/* Agua + Peso */}
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:12}}>
             <div style={{background:"#fff",borderRadius:14,padding:14,boxShadow:"0 1px 6px rgba(0,0,0,.06)"}}>
-              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
-                <div>
-                  <div style={{fontSize:11,color:"#888"}}>Agua</div>
-                  <div style={{fontSize:17,fontWeight:700,color:BLUE}}>{water}<span style={{fontSize:11,fontWeight:400,color:"#aaa"}}>/{waterGoal}</span></div>
-                </div>
-                <div style={{fontSize:28}}>💧</div>
+              <div style={{marginBottom:10}}>
+                <div style={{fontSize:11,color:"#888"}}>Agua</div>
+                <div style={{fontSize:17,fontWeight:700,color:BLUE,marginBottom:8}}>{water}<span style={{fontSize:11,fontWeight:400,color:"#aaa"}}>/{waterGoal}</span></div>
+                <div style={{fontSize:10,color:"#aaa"}}>{water*250} ml</div>
               </div>
               <div style={{display:"flex",gap:4}}>
                 <button onClick={()=>setWater(water-1)} style={{flex:1,padding:"5px 0",background:"#f5f5f5",border:"none",borderRadius:7,fontSize:16,color:BLUE}}>−</button>
@@ -736,14 +734,11 @@ function App() {
             </div>
 
             <div style={{background:"#fff",borderRadius:14,padding:14,boxShadow:"0 1px 6px rgba(0,0,0,.06)"}}>
-              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}>
-                <div>
-                  <div style={{fontSize:11,color:"#888"}}>Peso</div>
-                  <div style={{fontSize:17,fontWeight:700,color:GREEN}}>
-                    {weightVal||"—"}<span style={{fontSize:11,fontWeight:400,color:"#aaa"}}> kg</span>
-                  </div>
+              <div style={{marginBottom:8}}>
+                <div style={{fontSize:11,color:"#888"}}>Peso corporal</div>
+                <div style={{fontSize:17,fontWeight:700,color:GREEN}}>
+                  {weightVal||"—"}<span style={{fontSize:11,fontWeight:400,color:"#aaa"}}> kg</span>
                 </div>
-                <div style={{fontSize:28}}>⚖️</div>
               </div>
               <input type="number" value={weightVal} step="0.1" min="30" max="300"
                 placeholder="ej: 78.5"
@@ -777,7 +772,7 @@ function App() {
 
           {workouts.length === 0 && (
             <button onClick={()=>setModal("workout")} style={{width:"100%",padding:12,background:LGREEN,color:GREEN,border:`2px dashed ${GREEN}`,borderRadius:10,fontWeight:600,fontSize:13,cursor:"pointer",marginBottom:12}}>
-              💪 Agregar entrenamiento
+              Agregar entrenamiento
             </button>
           )}
 
@@ -915,7 +910,7 @@ function App() {
                   setModal(null);
                 }}
                   style={{width:"100%",padding:10,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:600,fontSize:12,cursor:"pointer"}}>
-                  ✓ Agregar receta al día
+                  Agregar receta al día
                 </button>
               </div>
             ))
@@ -970,7 +965,7 @@ function App() {
             </div>
 
             <div style={{background:"#ECFDF5",borderRadius:10,padding:12,fontSize:12,color:"#065F46",lineHeight:1.6}}>
-              <div style={{fontWeight:600,marginBottom:6}}>✨ Con entrenamientos:</div>
+              <div style={{fontWeight:600,marginBottom:6}}>Con entrenamientos:</div>
               <ul style={{marginLeft:20}}>
                 <li>Kcal quemadas: {caloriesBurnedWorkouts}kcal</li>
                 <li>Meta total: {totalCalorieGoal}kcal</li>
@@ -980,7 +975,7 @@ function App() {
           </div>
 
           <button onClick={()=>setModal("goal")} style={{width:"100%",padding:12,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:700,fontSize:13,cursor:"pointer"}}>
-            ⚙️ Editar configuración
+            Editar configuración
           </button>
         </div>
       )}
@@ -1129,15 +1124,15 @@ function App() {
             <div style={{marginBottom:16}}>
               <label style={{fontSize:12,color:"#666",display:"block",marginBottom:3}}>Categoría</label>
               <select value={newFood.cat} onChange={e=>setNewFood(f=>({...f,cat:e.target.value}))}>
-                <option value="⭐ Mis alimentos">⭐ Mis alimentos</option>
-                <option value="🥩 Proteínas">🥩 Proteínas</option>
-                <option value="🌾 Cereales">🌾 Cereales</option>
-                <option value="🥦 Verduras">🥦 Verduras</option>
-                <option value="🍎 Frutas">🍎 Frutas</option>
-                <option value="🇨🇱 Cocina chilena">🇨🇱 Cocina chilena</option>
-                <option value="🥤 Bebidas">🥤 Bebidas</option>
-                <option value="🍫 Snacks">🍫 Snacks</option>
-                <option value="💪 Suplementos">💪 Suplementos</option>
+                <option value=" Mis alimentos"> Mis alimentos</option>
+                <option value=" Proteínas"> Proteínas</option>
+                <option value=" Cereales"> Cereales</option>
+                <option value=" Verduras"> Verduras</option>
+                <option value=" Frutas"> Frutas</option>
+                <option value=" Cocina chilena"> Cocina chilena</option>
+                <option value=" Bebidas"> Bebidas</option>
+                <option value=" Snacks"> Snacks</option>
+                <option value="Suplementos">Suplementos</option>
               </select>
             </div>
 
@@ -1183,7 +1178,7 @@ function App() {
                 </div>
 
                 <button onClick={addWorkout} style={{width:"100%",padding:12,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:700,fontSize:14,cursor:"pointer",marginBottom:8}}>
-                  ✓ Agregar entrenamiento
+                  Agregar entrenamiento
                 </button>
               </>
             )}
@@ -1312,7 +1307,7 @@ function App() {
               
               {/* Botones */}
               <div style={{display:"flex",gap:8,marginTop:8}}>
-                <button type="submit" style={{flex:1,padding:12,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:700,fontSize:13,cursor:"pointer"}}>✓ Enviar Feedback</button>
+                <button type="submit" style={{flex:1,padding:12,background:GREEN,color:"#fff",border:"none",borderRadius:10,fontWeight:700,fontSize:13,cursor:"pointer"}}>Enviar Feedback</button>
                 <button type="button" onClick={()=>setModal(null)} style={{flex:1,padding:12,background:"#f5f5f5",color:"#555",border:"none",borderRadius:10,fontSize:13,cursor:"pointer"}}>Cancelar</button>
               </div>
             </form>
