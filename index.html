@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -847,6 +846,34 @@ function App() {
               </button>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* ══════ TAB MIS ALIMENTOS ══════ */}
+      {tab==="mis" && (
+        <div style={{padding:14}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
+            <div style={{fontSize:15,fontWeight:700}}>Alimentos personalizados</div>
+            <button onClick={()=>setModal("nuevo")} style={{background:GREEN,color:"#fff",border:"none",borderRadius:8,padding:"6px 12px",fontSize:12,fontWeight:600,cursor:"pointer"}}>+ Nuevo</button>
+          </div>
+
+          {customDB.length===0
+            ? <div style={{textAlign:"center",padding:"30px 0",color:"#bbb"}}>
+                <div style={{fontSize:14}}>Sin alimentos personalizados</div>
+                <div style={{fontSize:12}}>Crea tu primer alimento haciendo clic en "+ Nuevo"</div>
+              </div>
+            : <div style={{background:"#fff",borderRadius:14,boxShadow:"0 1px 6px rgba(0,0,0,.06)",overflow:"hidden"}}>
+                {customDB.map(f=>(
+                  <div key={f.id} style={{padding:"12px 14px",borderBottom:"1px solid #f5f5f5",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                    <div>
+                      <div style={{fontSize:13,fontWeight:600}}>{f.n}</div>
+                      <div style={{fontSize:11,color:"#999"}}>{f.cal}kcal · P:{f.pro}g C:{f.car}g G:{f.fat}g</div>
+                    </div>
+                    <button onClick={()=>{if(confirm("Eliminar este alimento?")) {saveCustom(customDB.filter(x=>x.id!==f.id));}}} style={{background:"#fee2e2",color:"#991b1b",border:"none",borderRadius:6,padding:"4px 8px",fontSize:11,cursor:"pointer"}}>Eliminar</button>
+                  </div>
+                ))}
+              </div>
+          }
         </div>
       )}
 
