@@ -471,7 +471,7 @@ function App() {
   const [newFood, setNewFood] = useState({n:"",cal:"",pro:"",car:"",fat:"",cat:"⭐ Mis alimentos",u:"g"});
   const [userProfile, setUserProfile] = useState(()=>JSON.parse(localStorage.getItem("cal_profile")||JSON.stringify({weight:70,height:170,age:30,sex:"M",activityLevel:"moderate",objective:"maintenance",goalWeight:70})));
   const [water, setWaterState] = useState(8);
-  const [waterGoal] = useState(8);
+  const [waterGoal] = useState(16);
   const [searchRef] = useState(useRef(null));
   const [selWorkout, setSelWorkout] = useState(null);
   const [workoutDuration, setWorkoutDuration] = useState(45);
@@ -569,7 +569,7 @@ function App() {
     setModal(null);
   };
 
-  const setWater = n => updateDay({ water: Math.max(0,Math.min(n,20)) });
+  const setWater = n => updateDay({ water: Math.max(0,Math.min(n,16)) });
   const setWeightVal = v => updateDay({ weight: v });
 
   const weightHistory = useMemo(()=>Array.from({length:14},(_,i)=>{
@@ -662,7 +662,7 @@ function App() {
           </button>
         </div>
         <div style={{display:"flex",gap:4,overflowX:"auto"}}>
-          {[["hoy","Hoy"],["entrenamientos","💪"],["recetas","🍽️"],["analisis","📊"]].map(([k,l])=>(
+          {[["hoy","Hoy"],["entrenamientos","💪"],["mis","Alimentos"],["recetas","🍽️"],["analisis","📊"]].map(([k,l])=>(
             <button key={k} onClick={()=>setTab(k)} style={{
               background:tab===k?"rgba(255,255,255,.25)":"transparent",
               border:"none",borderRadius:"8px 8px 0 0",padding:"6px 12px",
@@ -927,12 +927,10 @@ function App() {
             {RECIPES_DB.map(r=>(
               <div key={r.id} style={{background:"#fff",borderRadius:10,padding:12,marginBottom:8}}>
                 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                  <div>
+                  <div style={{flex:1}}>
                     <div style={{fontSize:12,fontWeight:600}}>{r.name}</div>
                     <div style={{fontSize:10,color:"#999"}}>{r.cal}kcal • P:{r.pro}g C:{r.carbs}g G:{r.fat}g</div>
                   </div>
-                  <button onClick={()=>setModal("recipeDetail")} 
-                    style={{background:LGREEN,color:GREEN,border:"none",borderRadius:6,padding:"4px 8px",fontSize:10,fontWeight:600,cursor:"pointer"}}>Ver</button>
                 </div>
               </div>
             ))}
